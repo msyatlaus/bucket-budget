@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/msyatlaus/bucket-budget#readme",
   "dependencies": {
-    "axios": "^0.20.0"
+    "axios": "^0.20.0",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1"
   }
 }
