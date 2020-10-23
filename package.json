@@ -1,0 +1,22 @@
+{
+  "name": "bucket-budget",
+  "version": "1.0.0",
+  "description": "Budget your bucket list.",
+  "main": "index.js",
+  "scripts": {
+    "start": "server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/msyatlaus/bucket-budget.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/msyatlaus/bucket-budget/issues"
+  },
+  "homepage": "https://github.com/msyatlaus/bucket-budget#readme",
+  "dependencies": {
+    "axios": "^0.20.0"
+  }
+}
