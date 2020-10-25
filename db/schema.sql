@@ -11,13 +11,14 @@ CREATE TABLE events(
   id INT AUTO_INCREMENT NOT NULL,
   name VARCHAR(255) NOT NULL,
   description TEXT,
-  date DATE,
+  date_time DATETIME,
   users_id INT NOT NULL,
   PRIMARY KEY(id)
 );
 CREATE TABLE budget_items(
   id INT AUTO_INCREMENT NOT NULL,
   name VARCHAR(255) NOT NULL,
+  category VARCHAR(255) NOT NULL,
   price INT NOT NULL,
   users_id INT NOT NULL,
   events_id INT,
