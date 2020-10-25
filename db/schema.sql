@@ -1,4 +1,4 @@
-CREATE DATABASE buget_bucket_db;
+CREATE DATABASE budget_bucket_db;
 USE budget_bucket_db;
 CREATE TABLE users(
   id INT AUTO_INCREMENT NOT NULL,
