@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS budget_bucket_db;
 CREATE DATABASE budget_bucket_db;
 USE budget_bucket_db;
 CREATE TABLE users(
