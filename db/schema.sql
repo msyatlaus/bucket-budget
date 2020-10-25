@@ -5,6 +5,8 @@ CREATE TABLE users(
   username VARCHAR(255) NOT NULL,
   pin_hash VARCHAR(255) NOT NULL,
   salt VARCHAR(16) NOT NULL,
+  created TIMESTAMP NOT NULL,
+  updated TIMESTAMP NOT NULL,
   PRIMARY KEY(id)
 );
 CREATE TABLE events(
@@ -13,6 +15,8 @@ CREATE TABLE events(
   description TEXT,
   date_time DATETIME,
   users_id INT NOT NULL,
+  created TIMESTAMP NOT NULL,
+  updated TIMESTAMP NOT NULL,
   PRIMARY KEY(id)
 );
 CREATE TABLE budget_items(
@@ -22,5 +26,7 @@ CREATE TABLE budget_items(
   price INT NOT NULL,
   users_id INT NOT NULL,
   events_id INT,
+  created TIMESTAMP NOT NULL,
+  updated TIMESTAMP NOT NULL,
   PRIMARY KEY(id)
 );
