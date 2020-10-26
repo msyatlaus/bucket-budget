@@ -2,6 +2,7 @@
 // const config = require('./config/config');
 const budgetItems = require('./models/budgetItems');
 const users = require('./models/users');
+const events = require('./models/events');
 
 // axios.get(`https://www.triposo.com/api/20200803/location.json?id=Tokyo&account=${config.tripsoApiId}&token=${config.tripsoApiKey}`)
 //     .then(data => {
@@ -15,11 +16,16 @@ const users = require('./models/users');
 
 budgetItems.sequelize.sync();
 users.sequelize.sync();
+events.sequelize.sync();
 
 budgetItems.findAll().then(data => {
     console.log(data);
 });
 
 users.findAll().then(data => {
+    console.log(data);
+});
+
+events.findAll().then(data => {
     console.log(data);
 });
