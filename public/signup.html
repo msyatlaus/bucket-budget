@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700|Montserrat:300" rel="stylesheet">
+</head>
+<style>
+    html,body{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+    min-height: 100%
+}
+h10 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    text-transform: uppercase;
+    color: black;
+    margin:auto;
+    vertical-align:middle;
+    font-weight: 100;
+    padding-bottom: 15px;
+    border-bottom: solid;
+    border-bottom-color: #D4AF37;
+ }
+ .signin{
+    padding : 90px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin:auto;
+    vertical-align:middle;
+ }
+.Welcome{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom : 40px;
+    margin-top: 50px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding : 60px;
+}
+
+ .game-rules{
+    font-size: 20px;
+    font-family: 'Lora', serif;
+    color: black;
+    margin:auto;
+    vertical-align:middle;
+    font-weight: 100;
+    padding-top: 35px;
+    padding-bottom: 35px;
+ }
+
+#start-quiz{
+    background: none;
+    border: 2px solid;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    line-height: 1;
+    margin: 0.5em;
+    padding: 1em 2em;
+    border-color: #D4AF37;
+}
+
+#start-quiz:hover{
+    background: #D4AF37;
+    background-color: #D4AF37;
+    border-color: black;
+}
+
+.javaQuiz{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom : 40px;
+    margin-top: 50px;
+    display: none;
+    padding : 150px;
+}
+
+.time{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    text-transform: uppercase;
+    color: black;
+    margin:auto;
+    float:right;
+    font-weight: 100;
+    padding: 10px;
+    border: solid;
+    border-color: #D4AF37;
+}
+
+#question{
+    font-size: 25px;
+    font-family: 'Lora', serif;
+    color: black;
+    margin:auto;
+    vertical-align:middle;
+    font-weight: 100;
+    padding-top: 35px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: solid;
+    border-bottom-color: #D4AF37;
+
+}
+
+.answer-options{
+    font-size: 25px;
+    font-family: 'Lora', serif;
+    letter-spacing: 3px;
+    color: black;
+    font-weight: 100;
+    padding: 10px;
+
+}
+
+.answer-options:hover{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    letter-spacing: 3px;
+    color: black;
+    font-weight: 100;
+    padding: 10px;
+    border: solid;
+    border-color: #D4AF37;
+}
+
+.answer-accurracy{
+    max-width: 10%; 
+    display: none;
+    margin : 0px; 
+    margin-left: auto;
+    margin-right: auto;
+    float: right;
+}
+
+.End{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom : 40px;
+    margin-top: 50px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding : 160px;
+    display: none; 
+}
+
+#submit-score{
+    background: none;
+    border: 2px solid;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    line-height: 1;
+    padding: 1em 2em;
+    border-color: #D4AF37;
+    float: left
+}
+
+#submit-score:hover{
+    background: #D4AF37;
+    background-color: #D4AF37;
+    border-color: black;
+}
+#intials{
+    border: 2px solid #D4AF37;
+    border-radius: 2px;
+    padding: 18px;
+    float: left;
+    margin-right: 20px;
+}
+
+.highscore{
+    font-size: 23px;
+    font-family: 'Lora', serif;
+    color: black;
+    vertical-align:middle;
+    font-weight: 100;
+    padding-bottom: 35px;
+    padding-top: 70px;
+}
+
+.highscoreboard{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom : 40px;
+    margin-top: 50px;
+    display: none;
+    padding : 160px;
+}
+
+#clear-board{
+    background: none;
+    border: 2px solid;
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    line-height: 1;
+    margin-right: 10px;
+    padding: 1em 2em;
+    border-color: #D4AF37;
+    float: left
+}
+
+#clear-board:hover{
+    background: #D4AF37;
+    background-color: #D4AF37;
+    border-color: black;
+}
+
+#retake{
+    background: none;
+    border: 2px solid;
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    line-height: 1;
+    margin-right: 10px;
+    padding: 1em 2em;
+    border-color: #D4AF37;
+    float: left
+}
+
+#retake:hover{
+    background: #D4AF37;
+    background-color: #D4AF37;
+    border-color: black;
+}
+
+.highscoreList{
+    padding-top: 50px;
+}
+
+@media only screen and (min-width: 415px) and (max-width: 768px) {
+    html,body{
+        width: 100%;
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
+        overflow-x: hidden; 
+        min-height: 100%
+    }
+    h10 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 20px;
+        text-transform: uppercase;
+        color: black;
+        margin:auto;
+        vertical-align:middle;
+        font-weight: 100;
+        padding-bottom: 15px;
+        border-bottom: solid;
+        border-bottom-color: #D4AF37;
+     }
+    
+    .Welcome{
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        margin-bottom : 40px;
+        margin-top: 50px;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding : 60px;
+    }
+    
+     .game-rules{
+        font-size: 13px;
+        font-family: 'Lora', serif;
+        color: black;
+        margin:auto;
+        vertical-align:middle;
+        font-weight: 100;
+        padding-top: 35px;
+        padding-bottom: 35px;
+     }
+    
+     #start-quiz{
+        background: none;
+        border: 2px solid;
+        font-size: 10px;
+        font-family: 'Montserrat', sans-serif;
+        text-transform: uppercase;
+        line-height: 1;
+        margin: 0.5em;
+        padding: 1em 2em;
+        border-color: #D4AF37;
+    }
+    
+    #start-quiz:hover{
+        background: #D4AF37;
+        background-color: #D4AF37;
+        border-color: black;
+    }
+    
+    .javaQuiz{
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        margin-bottom : 40px;
+        margin-top: 50px;
+        display: none;
+        padding : 100px;
+    }
+    
+    .time{
+        font-family: 'Montserrat', sans-serif;
+        font-size: 25px;
+        text-transform: uppercase;
+        color: black;
+        margin:auto;
+        float:right;
+        font-weight: 100;
+        padding: 10px;
+        border: solid;
+        border-color: #D4AF37;
+    }
+    
+    #question{
+        font-size: 25px;
+        font-family: 'Lora', serif;
+        color: black;
+        margin:auto;
+        vertical-align:middle;
+        font-weight: 100;
+        padding-top: 35px;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        border-bottom: solid;
+        border-bottom-color: #D4AF37;
+    
+    }
+    
+    .answer-options{
+        font-size: 20px;
+        font-family: 'Lora', serif;
+        letter-spacing: 3px;
+        color: black;
+        font-weight: 100;
+        padding: 10px;
+    
+    }
+    
+    .answer-options:hover{
+        font-family: 'Montserrat', sans-serif;
+        font-size: 25px;
+        letter-spacing: 3px;
+        color: black;
+        font-weight: 100;
+        padding: 10px;
+        border: solid;
+        border-color: #D4AF37;
+    }
+    
+    .answer-accurracy{
+        max-width: 10%; 
+        display: none;
+        margin : 0px; 
+        margin-left: auto;
+        margin-right: auto;
+        float: right;
+    }
+        
+    .End{
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        margin-bottom : 40px;
+        margin-top: 50px;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding : 160px;
+        display: none; 
+    }
+    
+    #submit-score{
+        background: none;
+        border: 2px solid;
+        font-size: 20px;
+        font-family: 'Montserrat', sans-serif;
+        text-transform: uppercase;
+        line-height: 1;
+      
+        padding: 1em 2em;
+        border-color: #D4AF37;
+        float: left
+    }
+    
+    #submit-score:hover{
+        background: #D4AF37;
+        background-color: #D4AF37;
+        border-color: black;
+    }
+    #intials{
+        border: 2px solid #D4AF37;
+        border-radius: 2px;
+        padding: 18px;
+        float: left;
+        margin-bottom: 20px;
+    }
+
+    .highscore{
+        font-size: 23px;
+        font-family: 'Lora', serif;
+        color: black;
+        margin:auto;
+        vertical-align:middle;
+        font-weight: 100;
+        padding-bottom: 15px;
+    }
+    
+    .highscoreboard{
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        margin-bottom : 40px;
+        margin-top: 50px;
+        display: none;
+        padding : 160px;
+    }
+    
+    #clear-board{
+        background: none;
+        border: 2px solid;
+        font-size: 15px;
+        font-family: 'Montserrat', sans-serif;
+        text-transform: uppercase;
+        line-height: 1;
+        margin-right: 10px;
+        padding: 1em 2em;
+        border-color: #D4AF37;
+        float: left
+    }
+    
+    #clear-board:hover{
+        background: #D4AF37;
+        background-color: #D4AF37;
+        border-color: black;
+    }
+    
+    #retake{
+        background: none;
+        border: 2px solid;
+        font-size: 15px;
+        font-family: 'Montserrat', sans-serif;
+        text-transform: uppercase;
+        line-height: 1;
+        margin-top: 15px;
+        padding: 1em 2em;
+        border-color: #D4AF37;
+        float: left
+    }
+    
+    #retake{
+        background: #D4AF37;
+        background-color: #D4AF37;
+        border-color: black;
+    }
+
+    .highscoreList{
+        padding-top: 50px;
+    }
+}
+
+@media only screen and (max-width: 414px) { 
+
+    html,body{
+        width: 100%;
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
+        overflow-x: hidden; 
+        min-height: 100%
+    }
+    h10 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 12px;
+        text-transform: uppercase;
+        color: black;
+        margin:auto;
+        vertical-align:middle;
+        font-weight: 100;
+        padding-bottom: 15px;
+        border-bottom: solid;
+        border-bottom-color: #D4AF37;
+     }
+    
+    .Welcome{
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        margin-bottom : 40px;
+        margin-top: 50px;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding : 60px;
+        word-wrap: break-word;
+    }
+    
+     .game-rules{
+        font-size: 12px;
+        font-family: 'Lora', serif;
+        color: black;
+        margin:auto;
+        vertical-align:middle;
+        font-weight: 100;
+        padding-top: 35px;
+        padding-bottom: 35px;
+     }
+    
+     #start-quiz{
+        background: none;
+        border: 2px solid;
+        font-size: 20px;
+        font-family: 'Montserrat', sans-serif;
+        text-transform: uppercase;
+        line-height: 1;
+        margin: 0.5em;
+        padding: 1em 2em;
+        border-color: #D4AF37;
+    }
+    
+    #start-quiz:hover{
+        background: #D4AF37;
+        background-color: #D4AF37;
+        border-color: black;
+    }
+    
+    .javaQuiz{
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        margin-bottom : 40px;
+        margin-top: 50px;
+        display: none;
+        padding : 10px;
+        padding-bottom : 30px;
+    }
+    
+    .time{
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        text-transform: uppercase;
+        color: black;
+        margin:auto;
+        float:right;
+        font-weight: 100;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: solid;
+        border-color: #D4AF37;
+    }
+    
+    #question{
+        font-size: 15px;
+        font-family: 'Lora', serif;
+        color: black;
+        margin:auto;
+        vertical-align:middle;
+        font-weight: 100;
+        padding-top: 35px;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        border-bottom: solid;
+        border-bottom-color: #D4AF37;
+    
+    }
+    
+    .answer-options{
+        font-size: 12px;
+        font-family: 'Lora', serif;
+        letter-spacing: 3px;
+        color: black;
+        font-weight: 100;
+        padding: 10px;
+    
+    }
+    
+    .answer-options:hover{
+        font-family: 'Montserrat', sans-serif;
+        font-size: 12px;
+        letter-spacing: 3px;
+        color: black;
+        font-weight: 100;
+        padding: 10px;
+        border: solid;
+        border-color: #D4AF37;
+    }
+    
+    .answer-accurracy{
+        max-width: 10%; 
+        display: none;
+        margin : 0px; 
+        margin-left: auto;
+        margin-right: auto;
+        float: right;
+    }
+        
+    .End{
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        margin-bottom : 150px;
+        margin-top: 50px;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding : 80px;
+        padding-bottom : 180px;
+        display: none; 
+    }
+    
+    #submit-score{
+        background: none;
+        border: 2px solid;
+        font-size: 10px;
+        font-family: 'Montserrat', sans-serif;
+        text-transform: uppercase;
+        line-height: 1;
+        padding: 1em 2em;
+        border-color: #D4AF37;
+        float: left
+    }
+    
+    #submit-score:hover{
+        background: #D4AF37;
+        background-color: #D4AF37;
+        border-color: black;
+    }
+    #intials{
+        border: 2px solid #D4AF37;
+        border-radius: 2px;
+        padding: 10px;
+        float: left;
+        margin-bottom: 10px;
+    }
+    .highscore{
+        font-size: 23px;
+        font-family: 'Lora', serif;
+        color: black;
+        margin:auto;
+        vertical-align:middle;
+        font-weight: 100;
+        padding-bottom: 15px;
+    }
+    
+    .highscoreboard{
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        margin-bottom : 40px;
+        margin-top: 50px;
+        display: none;
+        padding : 70px;
+        padding-bottom: 120px;
+    }
+    
+    #clear-board{
+        background: none;
+        border: 2px solid;
+        font-size: 12px;
+        font-family: 'Montserrat', sans-serif;
+        text-transform: uppercase;
+        line-height: 1;
+      
+        padding: 1em 2em;
+        border-color: #D4AF37;
+        float: left
+    }
+    
+    #clear-board:hover{
+        background: #D4AF37;
+        background-color: #D4AF37;
+        border-color: black;
+        margin-right: 10px;
+    }
+    
+    #retake{
+        background: none;
+        border: 2px solid;
+        font-size: 12px;
+        font-family: 'Montserrat', sans-serif;
+        text-transform: uppercase;
+        line-height: 1;
+        margin-top : 20px;
+        padding: 1em 2em;
+        border-color: #D4AF37;
+        float: left
+    }
+    
+    #retake{
+        background: #D4AF37;
+        background-color: #D4AF37;
+        border-color: black;
+    }
+
+    .highscoreList{
+        padding-top: 50px;
+    }
+
+}
+</style>
+<body>
+        <div class="container">
+                <div class="Welcome col-12 col-md-12 col-lg-9" style = "background-image: url('/Users/shubhangimundhada/BootCamp/bucket-budget/public/assets/welcome/Screen Shot 2020-10-22 at 9.32.15 PM.png')">
+                    <h10>Sign Up</h10>
+                    <div class="signin col-6 col-md-6 col-lg-9" >
+                            <input class = "col-12 col-md-12 col-lg-12" type="text" placeholder = "First Name" id="firstname" style="margin-bottom: 20px;"/>   
+                            <input class = "col-12 col-md-12 col-lg-12" type="text" placeholder = "Last Name" id="lastname" style="margin-bottom: 20px;"/>     
+                            <input class = "col-12 col-md-12 col-lg-12" type="text" placeholder = "User Name" id="username" style="margin-bottom: 20px;"/>    
+                            <input class = "col-12 col-md-12 col-lg-12" type="password" placeholder = "Password" id="password"/>    
+                            <button id="signup">Sign Up</button>
+                    </div>
+
+                </div>
+        </div>
+    <script src="script.js"></script>
+</body>
+</html>
