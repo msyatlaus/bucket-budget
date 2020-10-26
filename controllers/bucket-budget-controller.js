@@ -2,15 +2,16 @@ var express = require("express");
 
 var router = express.Router();
 
-// Import the model (budgetList.js) to use its database functions.
-// var bucketListItems = require("../models/bucketListItems.js");
-// var budget = require("../models/budget.js");
+// Import the model (../models/budgetItems.js) to use its database functions.
+// var budgetItems = require("../models/budgetItems.js");
+// var events = require("../models/events.js");
+// var users = require("../models/users.js");
 
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function(req, res) {
-  bucketListItems.selectAll(function(data) {
+  budgetItems.selectAll(function(data) {
     var hbsObject = {
-      bucketListItems: data
+      budgetItems: data
     };
     console.log(hbsObject);
     res.render("index", hbsObject);
@@ -18,17 +19,27 @@ router.get("/", function(req, res) {
 });
 
 router.get("/", function(req, res) {
-  budget.selectAll(function(data) {
+  events.selectAll(function(data) {
     var hbsObject = {
-      budget: data
+      events: data
     };
     console.log(hbsObject);
     res.render("index", hbsObject);
   });
 });
 
-router.post("/api/bucketListItems", function(req, res) {
-  bucketListItems.insertOne([
+router.get("/", function(req, res) {
+  users.selectAll(function(data) {
+    var hbsObject = {
+      users: data
+    };
+    console.log(hbsObject);
+    res.render("index", hbsObject);
+  });
+});
+
+router.post("/api/budgetItems", function(req, res) {
+  budgetItems.insertOne([
     "item_name", "full"
   ], [
     req.body.name, req.body.full
@@ -38,8 +49,8 @@ router.post("/api/bucketListItems", function(req, res) {
   });
 });
 
-router.post("/api/budget", function(req, res) {
-  budget.insertOne([
+router.post("/api/events", function(req, res) {
+  events.insertOne([
     "item_name", "full"
   ], [
     req.body.name, req.body.full
@@ -49,12 +60,23 @@ router.post("/api/budget", function(req, res) {
   });
 });
 
-router.put("/api/bucketListItems/:id", function(req, res) {
+router.post("/api/users", function(req, res) {
+  users.insertOne([
+    "item_name", "full"
+  ], [
+    req.body.name, req.body.full
+  ], function(result) {
+    // Send back the ID of the new quote
+    res.json({ id: result.insertId });
+  });
+});
+
+router.put("/api/budgetItems/:id", function(req, res) {
   var condition = "id = " + req.params.id;
 
   console.log("condition", condition);
 
-  bucketListItems.updateOne({
+  budgetItems.updateOne({
     addItem: true
   }, condition, function(result) {
     if (result.changedRows == 0) {
@@ -66,12 +88,12 @@ router.put("/api/bucketListItems/:id", function(req, res) {
   });
 });
 
-router.put("/api/budget/:id", function(req, res) {
+router.put("/api/events/:id", function(req, res) {
   var condition = "id = " + req.params.id;
 
   console.log("condition", condition);
 
-  budget.updateOne({
+  events.updateOne({
     increasePrice: true
   }, condition, function(result) {
     if (result.changedRows == 0) {
@@ -83,10 +105,27 @@ router.put("/api/budget/:id", function(req, res) {
   });
 });
 
-router.delete("/api/bucketListItems/:id", function(req, res) {
+router.put("/api/users/:id", function(req, res) {
   var condition = "id = " + req.params.id;
 
-  bucketListItems.delete(condition, function(result) {
+  console.log("condition", condition);
+
+  users.updateOne({
+    increasePrice: true
+  }, condition, function(result) {
+    if (result.changedRows == 0) {
+      // If no rows were changed, then the ID must not exist, so 404
+      return res.status(404).end();
+    } else {
+      res.status(200).end();
+    }
+  });
+});
+
+router.delete("/api/budgetItems/:id", function(req, res) {
+  var condition = "id = " + req.params.id;
+
+  budgetItems.delete(condition, function(result) {
     if (result.affectedRows == 0) {
       // If no rows were changed, then the ID must not exist, so 404
       return res.status(404).end();
@@ -96,10 +135,23 @@ router.delete("/api/bucketListItems/:id", function(req, res) {
   });
 });
 
-router.delete("/api/budget/:id", function(req, res) {
+router.delete("/api/events/:id", function(req, res) {
   var condition = "id = " + req.params.id;
 
-  budget.delete(condition, function(result) {
+  events.delete(condition, function(result) {
+    if (result.affectedRows == 0) {
+      // If no rows were changed, then the ID must not exist, so 404
+      return res.status(404).end();
+    } else {
+      res.status(200).end();
+    }
+  });
+});
+
+router.delete("/api/users/:id", function(req, res) {
+  var condition = "id = " + req.params.id;
+
+  users.delete(condition, function(result) {
     if (result.affectedRows == 0) {
       // If no rows were changed, then the ID must not exist, so 404
       return res.status(404).end();
