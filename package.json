@@ -2,7 +2,7 @@
   "name": "bucket-budget",
   "version": "1.0.0",
   "description": "Budget your bucket list.",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "server.js"
   },
