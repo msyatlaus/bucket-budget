@@ -19,10 +19,10 @@ const db = {
 
 db.synchronize();
 
-require('./routes/api-routes');
+require('./routes/api-routes')(app);
 
 app.listen(PORT, () => {
-    console.log("server running on localhost: " + PORT);
+    console.log("server running on localhost: ", PORT);
 });
 
 // axios.get(`https://www.triposo.com/api/20200803/location.json?id=Tokyo&account=${config.tripsoApiId}&token=${config.tripsoApiKey}`)
