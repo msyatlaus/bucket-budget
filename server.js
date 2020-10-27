@@ -3,7 +3,27 @@ const express = require('express');
 const app = express();
 const PORT = 3000;
 
-require('./routes/api-routes')(app);
+// Sets up the Express app to handle data parsing
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+// Static directory
+app.use(express.static("public"));
+
+// const db = {
+//     budgetItems: require('./models/budgetItems'),
+//     users: require('./models/users'),
+//     events: require('./models/events'),
+//     synchronize: function () {
+//         this.budgetItems.sequelize.sync();
+//         this.users.sequelize.sync();
+//         this.events.sequelize.sync();
+//     }
+// }
+
+// db.synchronize();
+
+// require('./routes/api-routes')(app);
 
 app.listen(PORT, () => {
     console.log("server running on localhost: ", PORT);
