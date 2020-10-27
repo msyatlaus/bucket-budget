@@ -3,4 +3,16 @@ module.exports = function (app, rootDirectory) {
     app.get('/', (req, res) => {
         res.sendFile(rootDirectory + '/public/welcome.html');
     });
+
+    // Sign Up Page
+    app.get('/signup', (req, res) => {
+        res.sendFile(rootDirectory + '/public/signup.html')
+    });
+
+    // Sign In Page
+    app.get('/signin', (req, res) => {
+        res.sendFile(rootDirectory + '/public/signin.html')
+    });
+
+    // Planning Page
 }
