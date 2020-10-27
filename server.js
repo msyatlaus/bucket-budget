@@ -10,53 +10,16 @@ app.use(express.json());
 // Static directory
 app.use(express.static("public"));
 
-// const db = {
-//     budgetItems: require('./models/budgetItems'),
-//     users: require('./models/users'),
-//     events: require('./models/events'),
-//     synchronize: function () {
-//         this.budgetItems.sequelize.sync();
-//         this.users.sequelize.sync();
-//         this.events.sequelize.sync();
-//     }
-// }
-
-// db.synchronize();
-
+// Routes
 // require('./routes/api-routes')(app);
-
-app.listen(PORT, () => {
-    console.log("server running on localhost:", PORT);
-});
-
-// const axios = require('axios');
-<<<<<<< HEAD
-// const config = require('./config/config');
-const express = require('express');
-
-const app = express();
-const PORT = 3000;
-
-const db = {
-    budgetItems: require('./models/budgetItems'),
-    users: require('./models/users'),
-    events: require('./models/events'),
-    synchronize: function () {
-        this.budgetItems.sequelize.sync();
-        this.users.sequelize.sync();
-        this.events.sequelize.sync();
-    }
-}
-
-db.synchronize();
-=======
->>>>>>> main
-
 require('./routes/html-routes')(app);
 
 app.listen(PORT, () => {
     console.log("server running on localhost:", PORT);
 });
+
+// AXIOS TESTING
+// const axios = require('axios');
 
 // axios.get(`https://www.triposo.com/api/20200803/location.json?id=Tokyo&account=${config.tripsoApiId}&token=${config.tripsoApiKey}`)
 //     .then(data => {
