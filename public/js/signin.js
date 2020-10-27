@@ -1,4 +1,13 @@
 $(document).ready(function () {
+    // Google Signin
+    gapi.load('auth2', () => {
+        gapi.auth2.init();
+    });
+
+    $('#g-signin').click(function () {
+        alert("google signin");
+    });
+
     $("#signin").click(function () {
         var userName = $("#username").val();
         var passWord = $("#password").val();
