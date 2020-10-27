@@ -1,7 +1,9 @@
 $(document).ready(function () {
     // Google Signin
     gapi.load('auth2', () => {
-        gapi.auth2.init();
+        gapi.auth2.init({
+            client_id: '320381748790-atuc5m3d33bf9114hu4bu5kvmikuqjad.apps.googleusercontent.com'
+        });
     });
 
     function onSignIn(googleUser) {
