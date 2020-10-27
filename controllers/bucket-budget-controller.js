@@ -2,10 +2,11 @@ var express = require("express");
 
 var router = express.Router();
 
-// Import the model (eventsList.js) to use its database functions.
+// Import the model (../models/budgetItems.js) to use its database functions.
 // var budgetItems = require("../models/budgetItems.js");
 // var events = require("../models/events.js");
-// var user = require("../models/users.js")
+// var users = require("../models/users.js");
+
 
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function(req, res) {
