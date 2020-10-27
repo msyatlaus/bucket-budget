@@ -6,6 +6,28 @@ html,body{
     overflow-x: hidden; 
     min-height: 100%
 }
+.navbar{
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-bottom-color: #D4AF37;
+    width: 100%;
+}
+
+.nav-link{
+    font-size: 20px;
+    font-family: 'Cormorant Garamond', serif;
+    color: black;
+    font-style: italic;
+}
+
+.navbar-light .navbar-nav .nav-link:hover{
+    color: #D4AF37;
+}
+
+.nav_logo{
+    width : 160px;
+    height: 90px;
+}
 h10 {
     font-family: 'Montserrat', sans-serif;
     font-size: 40px;
@@ -236,6 +258,28 @@ h10 {
         overflow-x: hidden; 
         min-height: 100%
     }
+    .navbar{
+        border-bottom-style: solid;
+        border-bottom-width: 2px;
+        border-bottom-color: #D4AF37;
+        width: 100%;
+    }
+    
+    .nav-link{
+        font-size: 15px;
+        font-family: 'Cormorant Garamond', serif;
+        color: black;
+        font-style: italic;
+    }
+    
+    .navbar-light .navbar-nav .nav-link:hover{
+        color: #D4AF37;
+    }
+
+    .nav_logo{
+        width : "20%";
+        height: 50px;
+    }
     h10 {
         font-family: 'Montserrat', sans-serif;
         font-size: 20px;
@@ -462,6 +506,30 @@ h10 {
         overflow-x: hidden; 
         min-height: 100%
     }
+    .navbar{
+        border-bottom-style: solid;
+        border-bottom-width: 2px;
+        border-bottom-color: #D4AF37;
+        width: 100%;
+    }
+    
+    .nav-link{
+        font-size: 12px;
+        font-family: 'Cormorant Garamond', serif;
+        color: black;
+        font-style: italic;
+    }
+    
+    .navbar-light .navbar-nav .nav-link:hover{
+        color: #D4AF37;
+    }
+
+    .nav_logo{
+
+        width : "28%";
+        height: 40px;
+    }
+
     h10 {
         font-family: 'Montserrat', sans-serif;
         font-size: 12px;
