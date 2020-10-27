@@ -1,19 +1,17 @@
 $(document).ready(function () {
-    // Google Signin
+    // Google Initialization
     gapi.load('auth2', () => {
         gapi.auth2.init({
-            client_id: '320381748790-atuc5m3d33bf9114hu4bu5kvmikuqjad.apps.googleusercontent.com'
+            client_id: '320381748790-3v1689ebkinvmndl34kjb07fu2nijvl7.apps.googleusercontent.com'
         });
     });
-
+    // Google Sign In
     function onSignIn(googleUser) {
-        // var profile = googleUser.getBasicProfile();
-        // console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-        // console.log('Name: ' + profile.getName());
-        // console.log('Image URL: ' + profile.getImageUrl());
-        // console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-
-        console.log("test Button");
+        var profile = googleUser.getBasicProfile();
+        console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+        console.log('Name: ' + profile.getName());
+        console.log('Image URL: ' + profile.getImageUrl());
+        console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
     }
 
 
