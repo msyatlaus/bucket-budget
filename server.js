@@ -1,5 +1,11 @@
 // const axios = require('axios');
 // const config = require('./config/config');
+const express = require('express');
+
+const app = express();
+const PORT = 3000;
+
+
 const db = {
     budgetItems: require('./models/budgetItems'),
     users: require('./models/users'),
@@ -12,6 +18,12 @@ const db = {
 }
 
 db.synchronize();
+
+require('./routes/api-routes')(app);
+
+app.listen(PORT, () => {
+    console.log("server running on localhost: ", PORT);
+});
 
 // axios.get(`https://www.triposo.com/api/20200803/location.json?id=Tokyo&account=${config.tripsoApiId}&token=${config.tripsoApiKey}`)
 //     .then(data => {
