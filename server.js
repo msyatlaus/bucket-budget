@@ -26,7 +26,7 @@ app.use(express.static("public"));
 // require('./routes/api-routes')(app);
 
 app.listen(PORT, () => {
-    console.log("server running on localhost: ", PORT);
+    console.log("server running on localhost:", PORT);
 });
 
 // const axios = require('axios');
