@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Google Client ID -->
     <meta name="google-signin-client_id"
       content="320381748790-atuc5m3d33bf9114hu4bu5kvmikuqjad.apps.googleusercontent.com">
 
@@ -18,7 +19,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="./css/sign-style.css">
 
-    <script src="https://apis.google.com/js/api.js"></script>
+    <!-- Google Sign In Script -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
   </head>
 
   <body>
@@ -59,7 +62,7 @@
         </div>
 
         <!-- Google Sign In Button -->
-        <button id="g-signin">Google Sign In</button>
+        <button class="g-signin2" data-onsuccess="onSignIn">Google Sign In</button>
 
       </div>
     </div>
