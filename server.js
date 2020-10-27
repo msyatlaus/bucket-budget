@@ -12,10 +12,10 @@ app.use(express.static("public"));
 
 // Routes
 // require('./routes/api-routes')(app);
-require('./routes/html-routes')(app);
+require('./routes/html-routes')(app, __dirname);
 
 app.listen(PORT, () => {
-    console.log("server running on localhost:", PORT);
+    console.log("server running on localhost:" + PORT);
 });
 
 // AXIOS TESTING

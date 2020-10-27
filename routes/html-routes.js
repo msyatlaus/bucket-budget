@@ -1,5 +1,6 @@
-module.exports = function (app) {
+module.exports = function (app, rootDirectory) {
+    // Welcome Page
     app.get('/', (req, res) => {
-        res.send('Hello World');
+        res.sendFile(rootDirectory + '/public/welcome.html');
     });
 }
