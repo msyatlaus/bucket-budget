@@ -1,5 +1,3 @@
-// const axios = require('axios');
-// const config = require('./config/config');
 const express = require('express');
 
 const app = express();
@@ -30,6 +28,8 @@ app.use(express.static("public"));
 app.listen(PORT, () => {
     console.log("server running on localhost: ", PORT);
 });
+
+// const axios = require('axios');
 
 // axios.get(`https://www.triposo.com/api/20200803/location.json?id=Tokyo&account=${config.tripsoApiId}&token=${config.tripsoApiKey}`)
 //     .then(data => {
