@@ -52,13 +52,13 @@ h7 {
 }
 
 .nav_logo{
-    width : "28%";
-    height: 70px;
+    width : 160px;
+    height: 90px;
 }
 
 .header-shadow{
     width: 100%;
-    height: 600px;    
+    height: 900px;    
     background-size:cover;
     display: flex;
     align-items: center;
