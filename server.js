@@ -10,7 +10,20 @@ app.use(express.json());
 // Static directory
 app.use(express.static("public"));
 
-require('./routes/api-routes')(app);
+// const db = {
+//     budgetItems: require('./models/budgetItems'),
+//     users: require('./models/users'),
+//     events: require('./models/events'),
+//     synchronize: function () {
+//         this.budgetItems.sequelize.sync();
+//         this.users.sequelize.sync();
+//         this.events.sequelize.sync();
+//     }
+// }
+
+// db.synchronize();
+
+// require('./routes/api-routes')(app);
 
 app.listen(PORT, () => {
     console.log("server running on localhost:", PORT);
