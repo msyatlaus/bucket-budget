@@ -1,0 +1,684 @@
+
+  
+/* ----------------------------For desktop and above: ----------------------------*/
+html,body{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+    min-height: 100%
+}
+
+h7 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: black;
+    margin:auto;
+    vertical-align:middle;
+    padding-bottom: 5px;
+    border-bottom: solid;
+    border-bottom-width: 2px;
+    border-bottom-color: #D4AF37;
+ }
+
+ h8 {
+    font-family: 'Montserrat', sans-serif;
+    font-style: oblique;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: black;
+    margin:auto;
+    vertical-align:middle;
+    padding-bottom: 5px;
+ }
+.navbar{
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-bottom-color: #D4AF37;
+    width: 100%;
+}
+
+.nav-link{
+    font-size: 20px;
+    font-family: 'Cormorant Garamond', serif;
+    color: black;
+    font-style: italic;
+}
+
+.navbar-light .navbar-nav .nav-link:hover{
+    color: #D4AF37;
+}
+
+.nav_logo{
+    width : 160px;
+    height: 90px;
+}
+
+.header-shadow{
+    width: 100%;
+    height: 900px;    
+    background-size:cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    opacity : 0.7;
+}
+h9{
+    font-size: 20px;
+    font-family: 'Cormorant Garamond', serif;
+    color: black;
+    font-style: italic;
+    margin:auto;
+    vertical-align:middle;
+    font-weight: 100;
+ }
+
+ h10{
+    font-size: 40px;
+    font-family: 'Cormorant Garamond', serif;
+    color: black;
+    font-style: italic;
+    margin:auto;
+    vertical-align:middle;
+    font-weight: 100;
+ }
+
+ span{
+    font-size: 40px;
+    padding:0px;
+    font-family: 'Cormorant Garamond', serif;
+    color: #D4AF37;
+    font-style: italic;
+    margin:auto;
+    vertical-align:middle;
+    font-weight: 100;
+ }
+
+
+ .shubhangi_pic{
+    max-width: 60%; 
+    height: auto;
+    padding : 30px;
+    display: block;
+    border: 2px solid #D4AF37;
+    border-radius: 2px;
+    margin : 30px; 
+    margin-left: auto;
+    margin-right: auto;
+ }
+
+ .description_about{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: 20% 20%;
+    background-position-x: 0%;
+    background-position-y: 24%;
+    padding: 25px;
+ }
+
+ h11{
+    font-size: 30px;
+    font-family: 'Cormorant Garamond', serif;
+    color: black;
+    font-style: italic;
+    margin:auto;
+    vertical-align:middle;
+    font-weight: 100;
+ }
+
+ .footer-shadow{
+    width: 100%;
+    height: 200px;    
+    background-size:cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    opacity : 0.7;
+}
+
+.footer-shadow-other{
+    width: 100%;
+    height: 200px;    
+    background-size:cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    opacity : 0.7;
+    position:absolute;
+    bottom:0;
+}
+
+
+.link_pic{
+    max-width: 50%; 
+    height: auto;
+    padding : 10px;
+    display: block;
+    border: 2px solid #D4AF37;
+    border-radius: 2px;
+    margin : 0px; 
+    margin-left: auto;
+    margin-right: auto;
+ }
+
+ /******************************Contact Form *************************************/
+ .contact-form{
+     padding : 10px;
+     margin : 100px;
+ }
+
+ label{
+    font-size: 20px;
+    font-family: 'Cormorant Garamond', serif;
+    color: black;
+    font-style: italic;
+    margin:auto;
+    vertical-align:middle;
+    font-weight: 100;
+ }
+
+ .form-control{
+    border: 2px solid #D4AF37;
+    border-radius: 2px;
+ }
+
+ .btn{
+    background-color: rgb(218, 197, 129); 
+    border: 2px solid #D4AF37;
+    border-radius: 2px;
+    font-size: 20px;
+    font-family: 'Cormorant Garamond', serif;
+    color: black;
+    font-style: italic;
+    font-weight: 100;
+    vertical-align:middle;
+    align-content: center;
+    justify-content: center;
+ }
+
+ .btn:hover{
+    background-color: #D4AF37; 
+    border: 2px solid rgb(20, 20, 19);
+    border-radius: 2px;
+ }
+
+ /******************************Portfolio *************************************/
+
+ .port_pic{
+    max-width: 90%; 
+    height: auto;
+    padding : 10px;
+    display: block;
+    border: 2px solid #D4AF37;
+    border-radius: 2px;
+    margin : 50px; 
+    margin-bottom : 10px; 
+    margin-left: auto;
+    margin-right: auto;
+ }
+
+/* ------------------------------For Tablets: --------------------------------------*/
+ @media only screen and (min-width: 415px) and (max-width: 768px) {
+    html,body{
+        width: 100%;
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
+        overflow-x: hidden; 
+    }
+
+    h7 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 17px;
+        text-transform: uppercase;
+        color: black;
+        margin:auto;
+        vertical-align:middle;
+        padding-bottom: 5px;
+        border-bottom: solid;
+        border-bottom-width: 2px;
+        border-bottom-color: #D4AF37;
+     }
+
+     h8 {
+        font-family: 'Montserrat', sans-serif;
+        font-style: oblique;
+        font-size: 14px;
+        text-transform: uppercase;
+        color: black;
+        margin:auto;
+        vertical-align:middle;
+        padding-bottom: 5px;
+     }
+    
+    .navbar{
+        border-bottom-style: solid;
+        border-bottom-width: 2px;
+        border-bottom-color: #D4AF37;
+        width: 100%;
+    }
+    
+    .nav-link{
+        font-size: 15px;
+        font-family: 'Cormorant Garamond', serif;
+        color: black;
+        font-style: italic;
+    }
+    
+    .navbar-light .navbar-nav .nav-link:hover{
+        color: #D4AF37;
+    }
+
+    .nav_logo{
+        width : "20%";
+        height: 50px;
+    }
+
+    .header-shadow{
+        width: 100%;
+        height: 280px;    
+        background-size:cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+    }
+    h9{
+        font-size: 20px;
+        font-family: 'Cormorant Garamond', serif;
+        color: black;
+        font-style: italic;
+        margin:auto;
+        vertical-align:middle;
+        font-weight: 100;
+     }
+
+    h10{
+        font-size: 30px;
+        font-family: 'Cormorant Garamond', serif;
+        color: black;
+        font-style: italic;
+        margin:auto;
+        vertical-align:middle;
+        font-weight: 100;
+     }
+
+
+     span{
+        font-size: 30px;
+        font-family: 'Cormorant Garamond', serif;
+        color: #D4AF37;
+        font-style: italic;
+        margin:auto;
+        vertical-align:middle;
+        font-weight: 100;
+     }
+    
+     .shubhangi_pic{
+        max-width: 50%; 
+        height: auto;
+        padding : 50px;
+        display: block;
+        border: 2px solid #D4AF37;
+        border-radius: 2px;
+        margin : 30px; 
+        margin-left: auto;
+        margin-right: auto;
+     }
+
+     .description_about{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background-repeat: no-repeat;
+        background-size: 20% 30%;
+        background-position-x: 0%;
+        background-position-y: 14%;
+        padding: 25px;
+     }
+    
+     h11{
+        font-size: 20px;
+        font-family: 'Cormorant Garamond', serif;
+        color: black;
+        font-style: italic;
+        margin:auto;
+        vertical-align:middle;
+        font-weight: 100;
+     }
+
+     .footer-shadow{
+        width: 100%;
+        height: 100px;    
+        background-size:cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        opacity : 0.7;
+    }
+    
+    .footer-shadow-other{
+        width: 100%;
+        height: 100px;    
+        background-size:cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        opacity : 0.7;
+        position:absolute;
+        bottom:0;
+    }
+    
+
+    .link_pic{
+        max-width: 45%; 
+        height: auto;
+        padding : 10px;
+        display: block;
+        border: 2px solid #D4AF37;
+        border-radius: 2px;
+        margin : 0px; 
+        margin-left: auto;
+        margin-right: auto;
+     }
+
+
+      /******************************Contact Form *************************************/
+        .contact-form{
+            padding : 60px;
+            margin : 50px;
+        }
+
+        label{
+        font-size: 20px;
+        font-family: 'Cormorant Garamond', serif;
+        color: black;
+        font-style: italic;
+        margin:auto;
+        vertical-align:middle;
+        font-weight: 100;
+        }
+
+        .form-control{
+        border: 2px solid #D4AF37;
+        border-radius: 2px;
+        }
+
+        .btn{
+        background-color: rgb(218, 197, 129); 
+        border: 2px solid #D4AF37;
+        border-radius: 2px;
+        font-size: 20px;
+        font-family: 'Cormorant Garamond', serif;
+        color: black;
+        font-style: italic;
+        font-weight: 100;
+        vertical-align:middle;
+        align-content: center;
+        justify-content: center;
+        }
+
+        .btn:hover{
+        background-color: #D4AF37; 
+        border: 2px solid rgb(20, 20, 19);
+        border-radius: 2px;
+        }
+
+         /******************************Portfolio *************************************/
+
+        .port_pic{
+            max-width: 100%; 
+            height: auto;
+            padding : 10px;
+            display: block;
+            border: 2px solid #D4AF37;
+            border-radius: 2px;
+            margin : 50px; 
+            margin-bottom : 10px; 
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+
+  }
+
+  /* -----------------------------For phone and below: ----------------------------------*/
+
+  @media only screen and (max-width: 414px) {
+    html,body{
+        width: 100%;
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
+        overflow-x: hidden; 
+    }
+    
+    h7 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 17px;
+        text-transform: uppercase;
+        color: black;
+        margin:auto;
+        vertical-align:middle;
+        padding-bottom: 5px;
+        border-bottom: solid;
+        border-bottom-width: 2px;
+        border-bottom-color: #D4AF37;
+     }
+
+     h8 {
+        font-family: 'Montserrat', sans-serif;
+        font-style: oblique;
+        font-size: 14px;
+        text-transform: uppercase;
+        color: black;
+        margin:auto;
+        vertical-align:middle;
+        padding-bottom: 5px;
+     }
+    .navbar{
+        border-bottom-style: solid;
+        border-bottom-width: 2px;
+        border-bottom-color: #D4AF37;
+        width: 100%;
+    }
+    
+    .nav-link{
+        font-size: 12px;
+        font-family: 'Cormorant Garamond', serif;
+        color: black;
+        font-style: italic;
+    }
+    
+    .navbar-light .navbar-nav .nav-link:hover{
+        color: #D4AF37;
+    }
+
+    .nav_logo{
+
+        width : "28%";
+        height: 40px;
+    }
+
+    .header-shadow{
+        width: 100%;
+        height: 100px;    
+        background-size:cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+    }
+
+    h9{
+        font-size: 15px;
+        font-family: 'Cormorant Garamond', serif;
+        color: black;
+        font-style: italic;
+        margin:auto;
+        vertical-align:middle;
+        font-weight: 100;
+     }
+
+    h10{
+        font-size: 15px;
+        font-family: 'Cormorant Garamond', serif;
+        color: black;
+        font-style: italic;
+        margin:auto;
+        vertical-align:middle;
+        font-weight: 100;
+     }
+
+     .shubhangi_pic{
+        max-width: 80%; 
+        height: auto;
+        padding : 30px;
+        display: block;
+        border: 2px solid #D4AF37;
+        border-radius: 2px;
+        margin : 30px; 
+        margin-left: auto;
+        margin-right: auto;
+     }
+
+     .description_about{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background-repeat: no-repeat;
+        background-size: 30% 30%;
+        background-position-x: 5%;
+        background-position-y: 5%;
+        padding: 25px;
+     }
+
+     span{
+        font-size: 15px;
+        font-family: 'Cormorant Garamond', serif;
+        color: #D4AF37;
+        font-style: italic;
+        margin:auto;
+        vertical-align:middle;
+        font-weight: 100;
+     }
+    
+     h11{
+        font-size: 14px;
+        font-family: 'Cormorant Garamond', serif;
+        color: black;
+        font-style: italic;
+        margin:auto;
+        vertical-align:middle;
+        font-weight: 100;
+     }
+
+     .footer-shadow{
+        width: 100%;
+        height: 80px;    
+        background-size:cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        opacity : 0.7;
+    }
+    
+    .footer-shadow-other{
+        width: 100%;
+        height: 80px;     
+        background-size:cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        opacity : 0.7;
+        position:absolute;
+        bottom:0;
+    }
+    
+    
+    .link_pic{
+        max-width: 90%; 
+        height: auto;
+        padding : 10px;
+        display: block;
+        border: 2px solid #D4AF37;
+        border-radius: 2px;
+        margin : 0px; 
+        margin-left: auto;
+        margin-right: auto;
+     }
+
+
+     /******************************Contact Form *************************************/
+        .contact-form{
+            padding : 20px;
+            margin : 20px;
+        }
+
+        label{
+        font-size: 15px;
+        font-family: 'Cormorant Garamond', serif;
+        color: black;
+        font-style: italic;
+        margin:auto;
+        vertical-align:middle;
+        font-weight: 100;
+        }
+
+        .form-control{
+        border: 2px solid #D4AF37;
+        border-radius: 2px;
+        }
+
+        .btn{
+        background-color: rgb(218, 197, 129); 
+        border: 2px solid #D4AF37;
+        border-radius: 2px;
+        font-size: 20px;
+        font-family: 'Cormorant Garamond', serif;
+        color: black;
+        font-style: italic;
+        font-weight: 100;
+        vertical-align:middle;
+        align-content: center;
+        justify-content: center;
+        }
+
+        .btn:hover{
+        background-color: #D4AF37; 
+        border: 2px solid rgb(20, 20, 19);
+        border-radius: 2px;
+        }
+
+  /******************************Portfolio *************************************/
+
+        .port_pic{
+            max-width: 100%; 
+            height: auto;
+            padding : 10px;
+            display: block;
+            border: 2px solid #D4AF37;
+            border-radius: 2px;
+            margin : 40px; 
+            margin-bottom : 5px; 
+            margin-left: auto;
+            margin-right: auto;
+        }
+  }
