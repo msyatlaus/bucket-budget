@@ -15,4 +15,7 @@ module.exports = function (app, rootDirectory) {
     });
 
     // Planning Page
+    app.get('/planning', (req, res) => {
+        res.sendFile(rootDirectory + '/public/planning.html')
+    });
 }
