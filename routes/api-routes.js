@@ -10,4 +10,25 @@ module.exports = function (app) {
             res.json(data[0].dataValues);
         });
     });
+
+    app.post('/api/budgetItems', (req, res) => {
+        controller.getFromBudgetItems(data => {
+            console.log(data[0].dataValues);
+            res.json(data[0].dataValues);
+        });
+    });
+
+    app.put('/api/budgetItems', (req, res) => {
+        controller.getFromBudgetItems(data => {
+            console.log(data[0].dataValues);
+            res.json(data[0].dataValues);
+        });
+    });
+
+    app.delete('/api/budgetItems', (req, res) => {
+        controller.getFromBudgetItems(data => {
+            console.log(data[0].dataValues);
+            res.json(data[0].dataValues);
+        });
+    });
 }
