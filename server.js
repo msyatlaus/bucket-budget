@@ -6,18 +6,18 @@ const app = express();
 const PORT = 3000;
 
 
-const db = {
-    budgetItems: require('./models/budgetItems'),
-    users: require('./models/users'),
-    events: require('./models/events'),
-    synchronize: function () {
-        this.budgetItems.sequelize.sync();
-        this.users.sequelize.sync();
-        this.events.sequelize.sync();
-    }
-}
+// const db = {
+//     budgetItems: require('./models/budgetItems'),
+//     users: require('./models/users'),
+//     events: require('./models/events'),
+//     synchronize: function () {
+//         this.budgetItems.sequelize.sync();
+//         this.users.sequelize.sync();
+//         this.events.sequelize.sync();
+//     }
+// }
 
-db.synchronize();
+// db.synchronize();
 
 require('./routes/api-routes')(app);
 
