@@ -10,25 +10,15 @@ app.use(express.json());
 // Static directory
 app.use(express.static("public"));
 
-// const db = {
-//     budgetItems: require('./models/budgetItems'),
-//     users: require('./models/users'),
-//     events: require('./models/events'),
-//     synchronize: function () {
-//         this.budgetItems.sequelize.sync();
-//         this.users.sequelize.sync();
-//         this.events.sequelize.sync();
-//     }
-// }
-
-// db.synchronize();
-
+// Routes
 // require('./routes/api-routes')(app);
+require('./routes/html-routes')(app, __dirname);
 
 app.listen(PORT, () => {
-    console.log("server running on localhost:", PORT);
+    console.log("server running on localhost:" + PORT);
 });
 
+// AXIOS TESTING
 // const axios = require('axios');
 
 // axios.get(`https://www.triposo.com/api/20200803/location.json?id=Tokyo&account=${config.tripsoApiId}&token=${config.tripsoApiKey}`)
