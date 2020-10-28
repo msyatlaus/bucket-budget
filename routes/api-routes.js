@@ -34,8 +34,15 @@ module.exports = function (app) {
 
     // USER TABLE
     app.post('/api/users', (req, res) => {
+        // Search for existing user
         controller.getUserFromUserId(req.body.userId, data => {
-            console.log(data);
+            if (data !== null) {
+                // Found existing user
+                console.log(data.dataValues);
+            } else {
+                // Create new user
+                console.log("Could not find user");
+            }
         });
     });
 }

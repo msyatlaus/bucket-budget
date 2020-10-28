@@ -25,7 +25,11 @@ Controller.prototype.getUserFromUserId = function (checkUserId, cb) {
   db.users.findOne({
     where: { userId: checkUserId }
   }).then(data => {
-    cb(data);
+    if (data === null) {
+      cb(null);
+    } else {
+      cb(data);
+    }
   });
 }
 
