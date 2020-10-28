@@ -3,17 +3,17 @@ $(document).ready(function () {
     gapi.load('auth2', () => {
         gapi.auth2.init({
             client_id: '320381748790-3v1689ebkinvmndl34kjb07fu2nijvl7.apps.googleusercontent.com'
+        }).then(() => {
+            console.log("Google auth initialized");
+
+            // Sign in button on click
+            $('.g-signin2').click(() => {
+                // console.log('test');
+
+                console.log(gapi.auth2);
+            })
         });
     });
-    // Google Sign In
-    function onSignIn(googleUser) {
-        var profile = googleUser.getBasicProfile();
-        console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-        console.log('Name: ' + profile.getName());
-        console.log('Image URL: ' + profile.getImageUrl());
-        console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-    }
-
 
     $("#signin").click(function () {
         var userName = $("#username").val();
