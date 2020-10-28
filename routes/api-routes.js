@@ -31,4 +31,9 @@ module.exports = function (app) {
             res.json(data[0].dataValues);
         });
     });
+
+    // USER TABLE
+    app.post('/api/users', (req, res) => {
+        console.log(req.body);
+    });
 }

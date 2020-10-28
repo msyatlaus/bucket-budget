@@ -13,8 +13,18 @@ db.synchronize();
 
 const Controller = function () { }
 
+// Budget Items Model
 Controller.prototype.getFromBudgetItems = function (cb) {
   db.budgetItems.findAll().then(data => {
+    cb(data);
+  });
+}
+
+// Users Model
+Controller.prototype.getUserFromUserId = function (checkUserId, cb) {
+  db.users.findOne({
+    where: { userId: checkUserId }
+  }).then(data => {
     cb(data);
   });
 }

@@ -14,13 +14,13 @@ $(document).ready(function () {
 
             $.ajax({
                 method: 'POST',
-                url: '/api',
+                url: '/api/users',
                 data: {
-                    userId: 'ID: ' + profile.getId(),
-                    email: 'Email: ' + profile.getEmail(),
-                    firstName: 'Given Name: ' + profile.getGivenName(),
-                    lastName: 'Family Name: ' + profile.getFamilyName(),
-                    imgUrl: 'Image URL: ' + profile.getImageUrl()
+                    userId: profile.getId(),
+                    email: profile.getEmail(),
+                    firstName: profile.getGivenName(),
+                    lastName: profile.getFamilyName(),
+                    imgUrl: profile.getImageUrl()
                 }
             });
         });
