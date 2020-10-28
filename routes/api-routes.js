@@ -34,6 +34,8 @@ module.exports = function (app) {
 
     // USER TABLE
     app.post('/api/users', (req, res) => {
-        console.log(req.body);
+        controller.getUserFromUserId(req.body.userId, data => {
+            console.log(data);
+        });
     });
 }
