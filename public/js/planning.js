@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $("#search").click(function () {
-        var city = $("#city").val();
+        var city = $("#placeVisit").val();
         $.ajax({
             method: "GET",
             url: "/api/triposo/:city",
@@ -13,5 +13,3 @@ $(document).ready(function () {
         });
     });
 });
-
-module.exports = planning;
