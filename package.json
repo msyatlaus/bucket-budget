@@ -2,7 +2,7 @@
   "name": "bucket-budget",
   "version": "1.0.0",
   "description": "Budget your bucket list.",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "server.js"
   },
@@ -19,6 +19,7 @@
   "dependencies": {
     "axios": "^0.20.0",
     "express": "^4.17.1",
-    "mysql": "^2.18.1"
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.3.5"
   }
 }
