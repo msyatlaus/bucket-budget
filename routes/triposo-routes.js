@@ -22,4 +22,3 @@ module.exports = function (app) {
 //     .then(data => {
 //         console.log(data.data.results[0]);
 //     });
-
