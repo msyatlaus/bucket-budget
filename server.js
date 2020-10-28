@@ -3,6 +3,8 @@ const express = require('express');
 const app = express();
 const PORT = 3000;
 
+const planning = require('planning');
+
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -26,7 +28,7 @@ app.listen(PORT, () => {
 //         console.log(data.data.results[0]);
 //     });
 
-// axios.get(`https://www.triposo.com/api/20200803/tour.json?location_ids=San_Francisco&count=10&account=${config.tripsoApiId}&token=${config.tripsoApiKey}`)
-//     .then(data => {
-//         console.log(data.data.results);
-//     });
+axios.get(`https://www.triposo.com/api/20200803/tour.json?location_ids=${planning.citySearch}&count=10&account=${config.tripsoApiId}&token=${config.tripsoApiKey}`)
+    .then(data => {
+        console.log(data.data.results);
+    });
