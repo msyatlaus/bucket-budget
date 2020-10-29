@@ -6,6 +6,41 @@ html,body{
     overflow-x: hidden; 
     min-height: 100%
 }
+.grid-container {
+    display: grid;
+    grid-template-areas:
+      'header header header header header header'
+      'menu main main main main main'
+      'menu footer footer footer footer footer';
+    grid-gap: 20px;
+    padding: 10px;
+  }
+  
+  .grid-container > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px;
+    font-size: 30px;
+  }
+.item1 { grid-area: header; }
+.item2 { grid-area: menu; }
+.item3 { grid-area: main; }
+.navbar-brand {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: black;
+    padding-bottom: 5px;
+    border-bottom: solid;
+    border-bottom-width: 2px;
+    border-bottom-color: #D4AF37;
+ }
+
+.header{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
 .navbar{
     border-bottom-style: solid;
     border-bottom-width: 2px;
@@ -31,6 +66,31 @@ html,body{
 .parameters{
     padding-top: 40px; 
 }
+
+.intials{
+    border: 2px solid #D4AF37;
+    border-radius: 2px;
+    padding: 18px;
+    margin-right: 20px;
+}
+
+.sign-up{
+    background: none;
+    border: 2px solid;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    line-height: 1;
+    padding: .9em 2em;
+    border-color: #D4AF37;
+}
+
+.sign-up:hover{
+    background: #D4AF37;
+    background-color: #D4AF37;
+    border-color: black;
+}
+
 h7 {
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
@@ -103,11 +163,11 @@ td {
     border-color: #D4AF37;
     background-color: rgb(214, 210, 197, 0.066);
 }
+
   
 .listhing{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    margin-bottom : 40px;
-    margin-top: 50px;
+    margin : 0px;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -124,183 +184,3 @@ td {
     padding-top: 35px;
     padding-bottom: 35px;
  }
-
-.sign-up{
-    background: none;
-    border: 2px solid;
-    font-size: 20px;
-    font-family: 'Montserrat', sans-serif;
-    text-transform: uppercase;
-    line-height: 1;
-    padding: .9em 2em;
-    border-color: #D4AF37;
-}
-
-.sign-up:hover{
-    background: #D4AF37;
-    background-color: #D4AF37;
-    border-color: black;
-}
-
-.javaQuiz{
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    margin-bottom : 40px;
-    margin-top: 50px;
-    display: none;
-    padding : 150px;
-}
-
-.time{
-    font-family: 'Montserrat', sans-serif;
-    font-size: 25px;
-    text-transform: uppercase;
-    color: black;
-    margin:auto;
-    float:right;
-    font-weight: 100;
-    padding: 10px;
-    border: solid;
-    border-color: #D4AF37;
-}
-
-#question{
-    font-size: 25px;
-    font-family: 'Lora', serif;
-    color: black;
-    margin:auto;
-    vertical-align:middle;
-    font-weight: 100;
-    padding-top: 35px;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
-    border-bottom: solid;
-    border-bottom-color: #D4AF37;
-
-}
-
-.answer-options{
-    font-size: 25px;
-    font-family: 'Lora', serif;
-    letter-spacing: 3px;
-    color: black;
-    font-weight: 100;
-    padding: 10px;
-
-}
-
-.answer-options:hover{
-    font-family: 'Montserrat', sans-serif;
-    font-size: 25px;
-    letter-spacing: 3px;
-    color: black;
-    font-weight: 100;
-    padding: 10px;
-    border: solid;
-    border-color: #D4AF37;
-}
-
-.answer-accurracy{
-    max-width: 10%; 
-    display: none;
-    margin : 0px; 
-    margin-left: auto;
-    margin-right: auto;
-    float: right;
-}
-
-.End{
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    margin-bottom : 40px;
-    margin-top: 50px;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding : 160px;
-    display: none; 
-}
-
-#submit-score{
-    background: none;
-    border: 2px solid;
-    font-size: 20px;
-    font-family: 'Montserrat', sans-serif;
-    text-transform: uppercase;
-    line-height: 1;
-    padding: 1em 2em;
-    border-color: #D4AF37;
-    float: left
-}
-
-#submit-score:hover{
-    background: #D4AF37;
-    background-color: #D4AF37;
-    border-color: black;
-}
-.intials{
-    border: 2px solid #D4AF37;
-    border-radius: 2px;
-    padding: 18px;
-    float: left;
-    margin-right: 20px;
-}
-
-.highscore{
-    font-size: 23px;
-    font-family: 'Lora', serif;
-    color: black;
-    vertical-align:middle;
-    font-weight: 100;
-    padding-bottom: 35px;
-    padding-top: 70px;
-}
-
-.highscoreboard{
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    margin-bottom : 40px;
-    margin-top: 50px;
-    display: none;
-    padding : 160px;
-}
-
-#clear-board{
-    background: none;
-    border: 2px solid;
-    font-size: 15px;
-    font-family: 'Montserrat', sans-serif;
-    text-transform: uppercase;
-    line-height: 1;
-    margin-right: 10px;
-    padding: 1em 2em;
-    border-color: #D4AF37;
-    float: left
-}
-
-#clear-board:hover{
-    background: #D4AF37;
-    background-color: #D4AF37;
-    border-color: black;
-}
-
-#retake{
-    background: none;
-    border: 2px solid;
-    font-size: 15px;
-    font-family: 'Montserrat', sans-serif;
-    text-transform: uppercase;
-    line-height: 1;
-    margin-right: 10px;
-    padding: 1em 2em;
-    border-color: #D4AF37;
-    float: left
-}
-
-#retake:hover{
-    background: #D4AF37;
-    background-color: #D4AF37;
-    border-color: black;
-}
-
-.highscoreList{
-    padding-top: 50px;
-}
-
