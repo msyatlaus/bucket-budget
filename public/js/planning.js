@@ -38,7 +38,11 @@ $(document).ready(function () {
 
 function subQty(id, qty){
     var idClick = id[0].id; 
-    var qtyClick = qty; 
-    $('#subtotals #'+idClick+' .qty').html('<button class="delete" onclick = subQty('+idSend+'); data-key="'+hotelName+'">-</button> 1 <button class="delete" onclick = subQty(); data-key="'+hotelName+'">+</button>');
+    var qtyClick = qty - 1; 
+    if (qtyClick === 0){
+        $('table#subtotals tr#'+idClick+'').remove();
+    }else{
+        $('#subtotals #'+idClick+' .qty').html('<button class="delete" onclick = subQty('+idSend+'); data-key="'+hotelName+'">-</button> 1 <button class="delete" onclick = subQty(); data-key="'+hotelName+'">+</button>');
+    }
     var r = this; 
 }
