@@ -42,7 +42,7 @@ $(document).ready(function () {
                 $('#dining').append($('<tr>').attr('id',$.trim(decodeURIComponent(item.id))).append(
                              $('<td>').text($.trim(decodeURIComponent(item.name))),
                              $('<td>').text($.trim(decodeURIComponent(item.score.toFixed(2)))),
-                             $('<td>').text($.trim(decodeURIComponent("$" + (((item.score)/2)*100).toFixed(2))))                    
+                             $('<td>').text($.trim(decodeURIComponent("$" + (((item.score)/2)*10).toFixed(2))))                    
                            )
                 )
             });
@@ -64,6 +64,23 @@ $(document).ready(function () {
         $('#subtotals').append(tr);
 
         addCalBudget(hotelPrice.replace('$', ''), qtySend);
+    });
+
+    $('#dining').on( 'click', 'tr', function () {
+
+        var diningName = this.cells[0].innerHTML;
+        var diningPrice = this.cells[2].innerHTML;
+        var idSend = this.id; 
+        var qtySend = 1; 
+
+        var tr = '<tr id = ' + this.id + '>';
+        tr += '<td>' + diningName + '</td>';
+        tr += '<td class=qty><button class="delete" onclick = subQty('+idSend+','+qtySend+','+diningPrice.replace('$', '')+');>-</button> 1 <button class="delete" onclick = addQty('+idSend+','+qtySend+','+diningPrice.replace('$', '')+');>+</button></td>';
+        tr += '<td>' + diningPrice + '</td>';
+        tr += '</tr>';        
+        $('#subtotals').append(tr);
+
+        addCalBudget(diningPrice.replace('$', ''), qtySend);
     });
 
 });
