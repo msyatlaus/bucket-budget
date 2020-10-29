@@ -7,13 +7,17 @@ $(document).ready(function () {
     $("#search").click(function () {
         city = $("#placeVisit").val();
         initBudget = $("#budget").val();
+        getInfo();
+        document.getElementById("main-page").style.display = "block";
+    });
+
+    function getInfo(){
         getHotels();
         getDining();
         getNight();
+        getTour();
         addCalBudget(0, 0);
-        document.getElementById("hotel-result").style.display = "block";
-        document.getElementById("total-result").style.display = "block";
-    });
+    }
 
     function getHotels(){
         $.ajax({
@@ -54,6 +58,23 @@ $(document).ready(function () {
         $.ajax({
             method: "GET",
             url: "/triposo/highlights/nightlife/" + city
+        }).then(function (data) {
+            console.log(data);
+            $.each(data, function(i, item) {  
+                $('#night').append($('<tr>').attr('id',$.trim(decodeURIComponent(item.id))).append(
+                             $('<td>').text($.trim(decodeURIComponent(item.name))),
+                             $('<td>').text($.trim(decodeURIComponent(item.score.toFixed(2)))),
+                             $('<td>').text($.trim(decodeURIComponent("$" + (((item.score)/2)*10).toFixed(2))))                    
+                           )
+                )
+            });
+        });
+    }
+
+    function getTour(){
+        $.ajax({
+            method: "GET",
+            url: "/triposo/highlights/tag/" + city + '/tour'
         }).then(function (data) {
             console.log(data);
             $.each(data, function(i, item) {  
