@@ -10,6 +10,7 @@ $(document).ready(function () {
         getHotels();
         getDining();
         getNight();
+        addCalBudget(0, 0);
         document.getElementById("hotel-result").style.display = "block";
         document.getElementById("total-result").style.display = "block";
     });
