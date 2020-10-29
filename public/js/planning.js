@@ -21,6 +21,13 @@ $(document).ready(function () {
         });
     });
 
+    
+
+    $('#hotels').on( 'click', 'tr', function () {
+        var hotelName = this.cells[0].innerHTML;
+        var hotelPrice = this.cells[2].innerHTML;
+    });
+
     // $("#search").click(function () {
     //     var resultEl = document.getElementById("result");
     //      resultEl.style.display = "block";

@@ -9,9 +9,9 @@ html,body{
 .grid-container {
     display: grid;
     grid-template-areas:
-      'header header header header header header'
-      'menu main main main main main'
-      'menu footer footer footer footer footer';
+      'header header header header'
+      'menu menu main main'
+      'menu menu footer footer';
     grid-gap: 20px;
     padding: 10px;
   }
