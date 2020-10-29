@@ -5,7 +5,7 @@ const triposoUrl = `https://www.triposo.com/api/20200803`;
 const accountParams = `account=${config.triposo.apiId}&token=${config.triposo.apiKey}`;
 
 module.exports = function (app) {
-    // Get location article
+    // Get articles and summaries on specific locations
     app.get('/triposo/article/:location', (req, res) => {
         let location = req.params.location;
 
@@ -14,7 +14,7 @@ module.exports = function (app) {
         });
     });
 
-    // Get recommended cities from country
+    // Get recommended cities from two letter country code
     app.get('/triposo/findcities/:countryCode', (req, res) => {
         let countryCode = req.params.countryCode;
 
@@ -23,7 +23,7 @@ module.exports = function (app) {
         });
     });
 
-    // Get highlights at specific latitude and longitude
+    // Get all points of interest at specific latitude and longitude
     app.get('/triposo/highlights/coords/:lat/:lon', (req, res) => {
         let lat = req.params.lat;
         let lon = req.params.lon;
@@ -33,7 +33,7 @@ module.exports = function (app) {
         });
     });
 
-    // Get highlights by city name
+    // Get all points of interest by city name
     app.get('/triposo/highlights/:city', (req, res) => {
         let city = req.params.city;
 
@@ -42,7 +42,7 @@ module.exports = function (app) {
         });
     });
 
-    // Get hotels by city name
+    // Get hotel points of interest by city name
     app.get('/triposo/highlights/hotels/:city', (req, res) => {
         let city = req.params.city;
 
@@ -51,7 +51,7 @@ module.exports = function (app) {
         });
     });
 
-    // Get dining by city name
+    // Get dining points of interest by city name
     app.get('/triposo/highlights/dining/:city', (req, res) => {
         let city = req.params.city;
 
@@ -60,7 +60,7 @@ module.exports = function (app) {
         });
     });
 
-    // Get shopping highlights by city name
+    // Get shopping points of interest by city name
     app.get('/triposo/highlights/shopping/:city', (req, res) => {
         let city = req.params.city;
 
@@ -69,7 +69,7 @@ module.exports = function (app) {
         });
     });
 
-    // Get nightlife highlights by city name
+    // Get nightlife points of interest by city name
     app.get('/triposo/highlights/nightlife/:city', (req, res) => {
         let city = req.params.city;
 
@@ -78,7 +78,7 @@ module.exports = function (app) {
         });
     });
 
-    // Get nightlife highlights by city name
+    // Get points of interest by city name using custom tags
     app.get('/triposo/highlights/tag/:city/:tag', (req, res) => {
         let city = req.params.city;
         let tag = req.params.tag;
@@ -106,7 +106,7 @@ module.exports = function (app) {
     });
 }
 
-// Endpoints:
+// Triposo Endpoints:
 
 // article - retrieve article about a subject
 // city_walk - create a city walk for a certain city
