@@ -13,6 +13,7 @@ app.use(express.static("public"));
 // Routes
 require('./routes/api-routes')(app);
 require('./routes/html-routes')(app, __dirname);
+require('./routes/triposo-routes')(app);
 
 app.listen(PORT, () => {
     console.log("server running on localhost:" + PORT);
