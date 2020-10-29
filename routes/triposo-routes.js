@@ -78,6 +78,16 @@ module.exports = function (app) {
         });
     });
 
+    // Get nightlife highlights by city name
+    app.get('/triposo/highlights/tag/:city/:tag', (req, res) => {
+        let city = req.params.city;
+        let tag = req.params.tag;
+
+        axios.get(`${triposoUrl}/poi.json?location_id=${city}&tag_labels=${tag}&${accountParams}`).then(data => {
+            res.json(data.data.results);
+        });
+    });
+
     // Get detailed information on single points of interest
     app.get('/triposo/poi/:poiId', (req, res) => {
         let poiId = req.params.poiId;
