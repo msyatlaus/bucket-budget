@@ -33,19 +33,14 @@ module.exports = function (app) {
         });
     })
 
-    //37.7870044
-    //-122.41261319482301
-    //http://localhost:3000/triposo/highlights/37.7870044/-122.41261319482301
+    // Get detailed information on single points of interest
+    app.get('/triposo/poi/:poiId', (req, res) => {
+        let poiId = req.params.poiId;
 
-    // poi IN PROGRESS
-    // app.get('/triposo/poi/:location', (req, res) => {
-    //     let location = req.params.location;
-
-    //     axios.get(`${triposoUrl}/poi.json?location_ids=${location}&count=10&${accountParams}`).then(data => {
-    //         res.json(data.data.results);
-    //     });
-    // });
-    //bkn__184986
+        axios.get(`${triposoUrl}/poi.json?id=${poiId}&${accountParams}`).then(data => {
+            res.json(data.data.results);
+        });
+    });
 
     // Get common tag labels
     app.get('/triposo/tags', (req, res) => {
