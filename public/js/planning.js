@@ -1,4 +1,6 @@
 var initBudget;
+var totalSpending = 0;
+
 $(document).ready(function () {
     
 
@@ -32,37 +34,46 @@ $(document).ready(function () {
 
         var tr = '<tr id = ' + this.id + '>';
         tr += '<td>' + hotelName + '</td>';
-        tr += '<td class=qty><button class="delete" onclick = subQty('+idSend+','+qtySend+');>-</button> 1 <button class="delete" onclick = addQty('+idSend+','+qtySend+');>+</button></td>';
+        tr += '<td class=qty><button class="delete" onclick = subQty('+idSend+','+qtySend+','+hotelPrice.replace('$', '')+');>-</button> 1 <button class="delete" onclick = addQty('+idSend+','+qtySend+','+hotelPrice.replace('$', '')+');>+</button></td>';
         tr += '<td>' + hotelPrice + '</td>';
         tr += '</tr>';        
         $('#subtotals').append(tr);
 
-        calBudget(hotelPrice.replace('$', ''), qtySend);
+        addCalBudget(hotelPrice.replace('$', ''), qtySend);
     });
 
 });
 
-function subQty(id, qty){
+function subQty(id, qty, price){
     var idClick = id[0].id; 
     var qtyClick = qty - 1; 
     if (qtyClick === 0){
         $('table#subtotals tr#'+idClick+'').remove();
     }else{
-        $('#subtotals #'+idClick+' .qty').html('<button class="delete" onclick = subQty('+idClick+','+qtyClick+');>-</button> '+qtyClick+' <button class="delete" onclick = addQty('+idClick+','+qtyClick+');>+</button>');
+        $('#subtotals #'+idClick+' .qty').html('<button class="delete" onclick = subQty('+idClick+','+qtyClick+','+price+');>-</button> '+qtyClick+' <button class="delete" onclick = addQty('+idClick+','+qtyClick+','+price+');>+</button>');
     }
+    dedCalBudget(price, 1);
 }
 
-function addQty(id, qty){
+function addQty(id, qty, price){
     var idClick = id[0].id; 
     var qtyClick = qty + 1; 
     if (qtyClick === 0){
         $('table#subtotals tr#'+idClick+'').remove();
     }else{
-        $('#subtotals #'+idClick+' .qty').html('<button class="delete" onclick = subQty('+idClick+','+qtyClick+');>-</button> '+qtyClick+' <button class="delete" onclick = addQty('+idClick+','+qtyClick+');>+</button>');
+        $('#subtotals #'+idClick+' .qty').html('<button class="delete" onclick = subQty('+idClick+','+qtyClick+','+price+');>-</button> '+qtyClick+' <button class="delete" onclick = addQty('+idClick+','+qtyClick+','+price+');>+</button>');
     }
+    addCalBudget(price, 1);
 }
 
-function calBudget(price, qty){
-    var totalSpending = price * qty; 
-    var remainingBudget = initBudget - totalSpending; 
+function addCalBudget(price, qty){
+    totalSpending = totalSpending + (price * qty); 
+    initBudget = initBudget - (price * qty); 
+    $('.budgetCal').html('<h7>Total Cost: $' + totalSpending.toFixed(2) + '</h7><h7>Budget Remaining: $' + initBudget.toFixed(2)+ '</h7>');
+}
+
+function dedCalBudget(price, qty){
+    totalSpending = totalSpending - (price * qty); 
+    initBudget = initBudget + (price * qty); 
+    $('.budgetCal').html('<h7>Total Cost: $' + totalSpending.toFixed(2) + '</h7><h7>Budget Remaining: $' + initBudget.toFixed(2)+ '</h7>');
 }
