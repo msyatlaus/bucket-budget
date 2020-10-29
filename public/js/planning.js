@@ -24,9 +24,10 @@ $(document).ready(function () {
         var hotelName = this.cells[0].innerHTML;
         var hotelPrice = this.cells[2].innerHTML;
         var idSend = this.id; 
+        var qtySend = 1; 
         var tr = '<tr id = ' + this.id + '>';
         tr += '<td>' + hotelName + '</td>';
-        tr += '<td class=qty><button class="delete" onclick = subQty('+idSend+'); data-key="'+hotelName+'">-</button> 1 <button class="delete" onclick = subQty(); data-key="'+hotelName+'">+</button></td>';
+        tr += '<td class=qty><button class="delete" onclick = subQty('+idSend+','+qtySend+');>-</button> 1 <button class="delete" onclick = subQty('+idSend+','+qtySend+');>+</button></td>';
         tr += '<td>' + hotelPrice + '</td>';
         tr += '</tr>';
         
@@ -35,8 +36,9 @@ $(document).ready(function () {
 
 });
 
-function subQty(id){
+function subQty(id, qty){
     var idClick = id[0].id; 
-    $('#subtotals #'+idClick+' .qty').html('XXX');
+    var qtyClick = qty; 
+    $('#subtotals #'+idClick+' .qty').html('<button class="delete" onclick = subQty('+idSend+'); data-key="'+hotelName+'">-</button> 1 <button class="delete" onclick = subQty(); data-key="'+hotelName+'">+</button>');
     var r = this; 
 }
