@@ -1,7 +1,7 @@
 const axios = require('axios');
 const config = require('../config/config.js');
 
-const triposoUrl = `https://www.triposo.com/api/20200803/`;
+const triposoUrl = `https://www.triposo.com/api/20200803`;
 const accountParams = `account=${config.triposo.apiId}&token=${config.triposo.apiKey}`;
 
 module.exports = function (app) {
@@ -9,22 +9,18 @@ module.exports = function (app) {
     app.get('/triposo/article/:location', (req, res) => {
         let location = req.params.location;
 
-        axios.get(`${triposoUrl}article.json?location_ids=${location}&count=10&${accountParams}`).then(data => {
+        axios.get(`${triposoUrl}/article.json?location_ids=${location}&count=10&${accountParams}`).then(data => {
             res.json(data.data.results);
         });
-    })
+    });
 
-    // app.get('/api/triposo/:city', (req, res) => {
-    //     let city = req.params.city;
+    // Get common tag labels
+    app.get('/triposo/tags', (req, res) => {
 
-    //     axios.get(`https://www.triposo.com/api/20200803/tour.json?location_ids=${city}&count=10&account=${config.triposo.apiId}&token=${config.triposo.apiKey}`)
-    //         .then(data => {
-    //             console.log(data.data.results);
-    //             res.json(data.data.results);
-    //         }).catch(err => {
-    //             console.log(err);
-    //         });
-    // });
+        axios.get(`${triposoUrl}/common_tag_labels.json?${accountParams}`).then(data => {
+            res.json(data.data.results);
+        });
+    });
 }
 
 /*
