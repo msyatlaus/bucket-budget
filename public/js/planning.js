@@ -1,12 +1,17 @@
 var initBudget;
 var totalSpending = 0;
-
+var city;
 $(document).ready(function () {
     
 
     $("#search").click(function () {
-        var city = $("#placeVisit").val();
+        city = $("#placeVisit").val();
         initBudget = $("#budget").val();
+        getHotels();
+        getDining();
+    });
+
+    function getHotels(){
         $.ajax({
             method: "GET",
             url: "/triposo/highlights/hotels/" + city
@@ -23,7 +28,26 @@ $(document).ready(function () {
                 )
             });
         });
-    });
+    }
+
+    function getDining(){
+        $.ajax({
+            method: "GET",
+            url: "/triposo/highlights/dining/" + city
+        }).then(function (data) {
+            console.log(data);
+            document.getElementById("hotel-result").style.display = "block";
+            document.getElementById("total-result").style.display = "block";
+            $.each(data, function(i, item) {  
+                $('#dining').append($('<tr>').attr('id',$.trim(decodeURIComponent(item.id))).append(
+                             $('<td>').text($.trim(decodeURIComponent(item.name))),
+                             $('<td>').text($.trim(decodeURIComponent(item.score.toFixed(2)))),
+                             $('<td>').text($.trim(decodeURIComponent("$" + (((item.score)/2)*100).toFixed(2))))                    
+                           )
+                )
+            });
+        });
+    }
     
     $('#hotels').on( 'click', 'tr', function () {
 
