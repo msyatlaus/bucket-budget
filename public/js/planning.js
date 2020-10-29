@@ -7,8 +7,8 @@ $(document).ready(function () {
             url: "/triposo/highlights/hotels/" + city
         }).then(function (data) {
             console.log(data);
-            var resultEl = document.getElementById("result");
-            resultEl.style.display = "block";
+            document.getElementById("hotel-result").style.display = "block";
+            document.getElementById("total-result").style.display = "block";
             $.each(data, function(i, item) {  
                 $('#hotels').append($('<tr>').attr('id',$.trim(decodeURIComponent(item.id))).append(
                              $('<td>').text($.trim(decodeURIComponent(item.name))),
