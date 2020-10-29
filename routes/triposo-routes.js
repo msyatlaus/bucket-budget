@@ -23,6 +23,30 @@ module.exports = function (app) {
         });
     });
 
+    // Get highlights at specific latitude and longitude
+    app.get('/triposo/highlights/:lat/:lon', (req, res) => {
+        let lat = req.params.lat;
+        let lon = req.params.lon;
+
+        axios.get(`${triposoUrl}/local_highlights.json?latitude=${lat}&longitude=${lon}&${accountParams}`).then(data => {
+            res.json(data.data.results);
+        });
+    })
+
+    //37.7870044
+    //-122.41261319482301
+    //http://localhost:3000/triposo/highlights/37.7870044/-122.41261319482301
+
+    // poi IN PROGRESS
+    // app.get('/triposo/poi/:location', (req, res) => {
+    //     let location = req.params.location;
+
+    //     axios.get(`${triposoUrl}/poi.json?location_ids=${location}&count=10&${accountParams}`).then(data => {
+    //         res.json(data.data.results);
+    //     });
+    // });
+    //bkn__184986
+
     // Get common tag labels
     app.get('/triposo/tags', (req, res) => {
 
