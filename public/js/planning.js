@@ -23,17 +23,24 @@ $(document).ready(function () {
     $('#hotels').on( 'click', 'tr', function () {
         var hotelName = this.cells[0].innerHTML;
         var hotelPrice = this.cells[2].innerHTML;
-        var tr = '<tr>';
+        var tr = '<tr id = ' + this.id + '>';
         tr += '<td>' + hotelName + '</td>';
-        tr += '<td><button class="delete" data-key="'+ (1 + 1) +'">-</button> 1 <button class="delete" data-key="'+ (1 + 1) +'">+</button></td>';
+        tr += '<td><button class="delete" onclick = subQty('+this.id+'); data-key="'+hotelName+'">-</button> 1 <button class="delete" onclick = subQty(); data-key="'+hotelName+'">+</button></td>';
         tr += '<td>' + hotelPrice + '</td>';
         tr += '</tr>';
         
         $('#subtotals').append(tr);
     });
 
+
+
     // $("#search").click(function () {
     //     var resultEl = document.getElementById("result");
     //      resultEl.style.display = "block";
     // });
 });
+
+function subQty(id){
+    var idClick = id; 
+    var r = this; 
+}
