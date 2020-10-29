@@ -24,14 +24,14 @@ module.exports = function (app) {
     });
 
     // Get highlights at specific latitude and longitude
-    app.get('/triposo/highlights/:lat/:lon', (req, res) => {
+    app.get('/triposo/highlights/coords/:lat/:lon', (req, res) => {
         let lat = req.params.lat;
         let lon = req.params.lon;
 
         axios.get(`${triposoUrl}/local_highlights.json?latitude=${lat}&longitude=${lon}&${accountParams}`).then(data => {
             res.json(data.data.results);
         });
-    })
+    });
 
     // Get highlights by city name
     app.get('/triposo/highlights/:city', (req, res) => {
@@ -40,7 +40,43 @@ module.exports = function (app) {
         axios.get(`${triposoUrl}/poi.json?location_id=${city}&${accountParams}`).then(data => {
             res.json(data.data.results);
         });
-    })
+    });
+
+    // Get hotels by city name
+    app.get('/triposo/highlights/hotels/:city', (req, res) => {
+        let city = req.params.city;
+
+        axios.get(`${triposoUrl}/poi.json?location_id=${city}&tag_labels=hotels&${accountParams}`).then(data => {
+            res.json(data.data.results);
+        });
+    });
+
+    // Get dining by city name
+    app.get('/triposo/highlights/dining/:city', (req, res) => {
+        let city = req.params.city;
+
+        axios.get(`${triposoUrl}/poi.json?location_id=${city}&tag_labels=eatingout&${accountParams}`).then(data => {
+            res.json(data.data.results);
+        });
+    });
+
+    // Get shopping highlights by city name
+    app.get('/triposo/highlights/shopping/:city', (req, res) => {
+        let city = req.params.city;
+
+        axios.get(`${triposoUrl}/poi.json?location_id=${city}&tag_labels=shopping&${accountParams}`).then(data => {
+            res.json(data.data.results);
+        });
+    });
+
+    // Get nightlife highlights by city name
+    app.get('/triposo/highlights/nightlife/:city', (req, res) => {
+        let city = req.params.city;
+
+        axios.get(`${triposoUrl}/poi.json?location_id=${city}&tag_labels=nightlife&${accountParams}`).then(data => {
+            res.json(data.data.results);
+        });
+    });
 
     // Get detailed information on single points of interest
     app.get('/triposo/poi/:poiId', (req, res) => {
