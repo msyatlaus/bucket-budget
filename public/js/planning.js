@@ -1,7 +1,10 @@
-
+var initBudget;
 $(document).ready(function () {
+    
+
     $("#search").click(function () {
         var city = $("#placeVisit").val();
+        initBudget = $("#budget").val();
         $.ajax({
             method: "GET",
             url: "/triposo/highlights/hotels/" + city
@@ -21,17 +24,20 @@ $(document).ready(function () {
     });
     
     $('#hotels').on( 'click', 'tr', function () {
+
         var hotelName = this.cells[0].innerHTML;
         var hotelPrice = this.cells[2].innerHTML;
         var idSend = this.id; 
         var qtySend = 1; 
+
         var tr = '<tr id = ' + this.id + '>';
         tr += '<td>' + hotelName + '</td>';
         tr += '<td class=qty><button class="delete" onclick = subQty('+idSend+','+qtySend+');>-</button> 1 <button class="delete" onclick = addQty('+idSend+','+qtySend+');>+</button></td>';
         tr += '<td>' + hotelPrice + '</td>';
-        tr += '</tr>';
-        
+        tr += '</tr>';        
         $('#subtotals').append(tr);
+
+        calBudget(hotelPrice.replace('$', ''), qtySend);
     });
 
 });
@@ -54,4 +60,9 @@ function addQty(id, qty){
     }else{
         $('#subtotals #'+idClick+' .qty').html('<button class="delete" onclick = subQty('+idClick+','+qtyClick+');>-</button> '+qtyClick+' <button class="delete" onclick = addQty('+idClick+','+qtyClick+');>+</button>');
     }
+}
+
+function calBudget(price, qty){
+    var totalSpending = price * qty; 
+    var remainingBudget = initBudget - totalSpending; 
 }
