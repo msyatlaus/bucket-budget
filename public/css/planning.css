@@ -91,6 +91,18 @@ td {
     border-color: #D4AF37;
     border-width: 1.8px;
   }
+
+  tr:hover{
+    cursor:pointer; 
+    font-family: 'Montserrat', sans-serif;
+    padding: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    color: black;
+    border: solid;
+    border-color: #D4AF37;
+    background-color: rgb(214, 210, 197, 0.066);
+}
   
 .listhing{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
