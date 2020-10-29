@@ -152,7 +152,7 @@ td {
     border-width: 1.8px;
   }
 
-  tr:hover{
+tr:hover{
     cursor:pointer; 
     font-family: 'Montserrat', sans-serif;
     padding: 8px;
@@ -172,6 +172,17 @@ td {
     justify-content: center;
     text-align: center;
     padding : 60px;
+}
+
+.budgetCal{
+    border: solid;
+    border-color: #D4AF37;
+    border-width: 2px;
+    padding: 10px;
+    margin: 20px; 
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
  .game-rules{
