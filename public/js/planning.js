@@ -9,6 +9,9 @@ $(document).ready(function () {
         initBudget = $("#budget").val();
         getHotels();
         getDining();
+        getNight();
+        document.getElementById("hotel-result").style.display = "block";
+        document.getElementById("total-result").style.display = "block";
     });
 
     function getHotels(){
@@ -17,8 +20,7 @@ $(document).ready(function () {
             url: "/triposo/highlights/hotels/" + city
         }).then(function (data) {
             console.log(data);
-            document.getElementById("hotel-result").style.display = "block";
-            document.getElementById("total-result").style.display = "block";
+
             $.each(data, function(i, item) {  
                 $('#hotels').append($('<tr>').attr('id',$.trim(decodeURIComponent(item.id))).append(
                              $('<td>').text($.trim(decodeURIComponent(item.name))),
@@ -36,10 +38,25 @@ $(document).ready(function () {
             url: "/triposo/highlights/dining/" + city
         }).then(function (data) {
             console.log(data);
-            document.getElementById("hotel-result").style.display = "block";
-            document.getElementById("total-result").style.display = "block";
             $.each(data, function(i, item) {  
                 $('#dining').append($('<tr>').attr('id',$.trim(decodeURIComponent(item.id))).append(
+                             $('<td>').text($.trim(decodeURIComponent(item.name))),
+                             $('<td>').text($.trim(decodeURIComponent(item.score.toFixed(2)))),
+                             $('<td>').text($.trim(decodeURIComponent("$" + (((item.score)/2)*10).toFixed(2))))                    
+                           )
+                )
+            });
+        });
+    }
+
+    function getNight(){
+        $.ajax({
+            method: "GET",
+            url: "/triposo/highlights/nightlife/" + city
+        }).then(function (data) {
+            console.log(data);
+            $.each(data, function(i, item) {  
+                $('#night').append($('<tr>').attr('id',$.trim(decodeURIComponent(item.id))).append(
                              $('<td>').text($.trim(decodeURIComponent(item.name))),
                              $('<td>').text($.trim(decodeURIComponent(item.score.toFixed(2)))),
                              $('<td>').text($.trim(decodeURIComponent("$" + (((item.score)/2)*10).toFixed(2))))                    
@@ -81,6 +98,23 @@ $(document).ready(function () {
         $('#subtotals').append(tr);
 
         addCalBudget(diningPrice.replace('$', ''), qtySend);
+    });
+
+    $('#night').on( 'click', 'tr', function () {
+
+        var nightName = this.cells[0].innerHTML;
+        var nightPrice = this.cells[2].innerHTML;
+        var idSend = this.id; 
+        var qtySend = 1; 
+
+        var tr = '<tr id = ' + this.id + '>';
+        tr += '<td>' + nightName + '</td>';
+        tr += '<td class=qty><button class="delete" onclick = subQty('+idSend+','+qtySend+','+nightPrice.replace('$', '')+');>-</button> 1 <button class="delete" onclick = addQty('+idSend+','+qtySend+','+nightPrice.replace('$', '')+');>+</button></td>';
+        tr += '<td>' + nightPrice + '</td>';
+        tr += '</tr>';        
+        $('#subtotals').append(tr);
+
+        addCalBudget(nightPrice.replace('$', ''), qtySend);
     });
 
 });
