@@ -14,6 +14,15 @@ module.exports = function (app) {
         });
     });
 
+    // Get recommended cities from country
+    app.get('/triposo/findcities/:countryCode', (req, res) => {
+        let countryCode = req.params.countryCode;
+
+        axios.get(`${triposoUrl}/location.json?countrycode=${countryCode}&type=city&${accountParams}`).then(data => {
+            res.json(data.data.results);
+        });
+    });
+
     // Get common tag labels
     app.get('/triposo/tags', (req, res) => {
 
@@ -22,11 +31,6 @@ module.exports = function (app) {
         });
     });
 }
-
-/*
-    common Tag label >> categories of things
-    Food, Hotel, Site Seeing
-*/
 
 // Endpoints:
 
