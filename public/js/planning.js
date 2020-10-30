@@ -174,3 +174,16 @@ function dedCalBudget(price, qty){
     initBudget = initBudget + (price * qty); 
     $('.budgetCal').html('<h7>Total Cost: $' + totalSpending.toFixed(2) + '</h7><h7>Budget Remaining: $' + initBudget.toFixed(2)+ '</h7>');
 }
+
+$('#confirm-trip').click(function () {
+    var resultObj = []
+    for ( let [i,row] of [...subtotals.rows].entries() ){ 
+        var testArray = [];
+        testArray.push(row.id);
+        for( let [j,cell] of [...row.cells].entries() ){
+             testArray.push(cell.innerText.replace(/[^a-z0-9\s]/gi, ''))
+        }
+        resultObj.push(testArray);
+    }
+    console.log(resultObj);
+});
