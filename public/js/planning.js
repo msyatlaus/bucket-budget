@@ -177,6 +177,7 @@ function dedCalBudget(price, qty){
 
 $('#confirm-trip').click(function () {
     var resultObj = []
+
     for ( let [i,row] of [...subtotals.rows].entries() ){ 
         var testArray = [];
         testArray.push(row.id);
@@ -187,3 +188,4 @@ $('#confirm-trip').click(function () {
     }
     console.log(resultObj);
 });
+

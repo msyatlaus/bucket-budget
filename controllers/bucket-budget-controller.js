@@ -13,6 +13,8 @@ db.synchronize();
 
 const Controller = function () { }
 
+
+// Budget Items
 Controller.prototype.getFromBudgetItems = function (cb) {
   db.budgetItems.findAll().then(data => {
     cb(data);
@@ -46,6 +48,79 @@ Controller.prototype.deleteBudgetItems = function (listItem, cb) {
     cb(data);
   });
 }
+
+
+// Events
+Controller.prototype.getFromEvents = function (cb) {
+  db.events.findAll().then(data => {
+    cb(data);
+  });
+}
+
+Controller.prototype.createEvents = function (listItem, cb) {
+  db.events.create(listItem).then(data => {
+    cb(data);
+  });
+}
+
+Controller.prototype.updateEvents = function (listItem, cb) {
+  db.events.update(
+    listItem.body,
+    {
+      where: {
+        id: listItem.id
+      }
+    }).then(data => {
+    cb(data);
+  });
+}
+
+Controller.prototype.deleteEvents = function (listItem, cb) {
+  db.events.destroy({
+    where: {
+      id: listItem
+    }
+  }).then(data => {
+    cb(data);
+  });
+}
+
+
+// Users
+Controller.prototype.getFromUsers = function (cb) {
+  db.users.findAll().then(data => {
+    cb(data);
+  });
+}
+
+Controller.prototype.createUsers = function (listItem, cb) {
+  db.users.create(listItem).then(data => {
+    cb(data);
+  });
+}
+
+Controller.prototype.updateUsers = function (listItem, cb) {
+  db.users.update(
+    listItem.body,
+    {
+      where: {
+        id: listItem.id
+      }
+    }).then(data => {
+    cb(data);
+  });
+}
+
+Controller.prototype.deleteUsers = function (listItem, cb) {
+  db.users.destroy({
+    where: {
+      id: listItem
+    }
+  }).then(data => {
+    cb(data);
+  });
+}
+
 
 const controller = new Controller();
 
