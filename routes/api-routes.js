@@ -65,7 +65,7 @@ module.exports = function (app) {
 
     app.post('/api/users', (req, res) => {
         // Search for existing user
-        controller.getUserFromUserId(req.body.userId, data => {
+        controller.getUserFromProfileId(req.body.userId, data => {
             if (data !== null) {
                 // Found existing user
                 console.log(data.dataValues);
@@ -73,12 +73,6 @@ module.exports = function (app) {
                 // Create new user
                 console.log("Could not find user");
             }
-        });
-    });
-
-    app.post('/api/users', (req, res) => {
-        controller.createUsers(req.body, data => {
-            res.json(data[0].dataValues);
         });
     });
 
