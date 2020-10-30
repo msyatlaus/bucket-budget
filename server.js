@@ -16,5 +16,5 @@ require('./routes/html-routes')(app, __dirname);
 require('./routes/triposo-routes')(app);
 
 app.listen(PORT, () => {
-    console.log("server running on localhost:" + PORT);
+    console.log("server running on http://localhost:" + PORT);
 });
