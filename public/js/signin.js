@@ -23,6 +23,7 @@ $(document).ready(function () {
                     imgUrl: profile.getImageUrl()
                 }
             }).then(data => {
+                // Reroute to planning page
                 window.location.assign('/planning');
             });
         });
