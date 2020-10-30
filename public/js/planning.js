@@ -186,16 +186,16 @@ $('#confirm-trip').click(function () {
     }
     console.log(resultObj);
     // for loop?
-    $.ajax({
-        method: "PUT",
-        url: "/api/budgetItems",
-        data: {
-            // name: ,
-            // quantity: ,
-            // price: ,
-            // event_id:
-        }
-    }).then(function () {
-        window.location.href = "/planning";
-    });
+    // $.ajax({
+    //     method: "PUT",
+    //     url: "/api/budgetItems",
+    //     data: {
+    //         // name: ,
+    //         // quantity: ,
+    //         // price: ,
+    //         // event_id:
+    //     }
+    // }).then(function () {
+    //     window.location.href = "/planning";
+    // });
 });
