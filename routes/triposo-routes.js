@@ -97,6 +97,15 @@ module.exports = function (app) {
         });
     });
 
+    // Get event information on a tour
+    app.get('/triposo/tour/:city', (req, res) => {
+        let city = req.params.city;
+
+        axios.get(`${triposoUrl}/tour.json?location_ids=${city}&${accountParams}`).then(data => {
+            res.json(data.data.results);
+        });
+    });
+
     // Get common tag labels
     app.get('/triposo/tags', (req, res) => {
 
