@@ -15,7 +15,6 @@ db.synchronize();
 
 const Controller = function () { }
 
-
 // Budget Items
 Controller.prototype.getFromBudgetItems = function (cb) {
   db.budgetItems.findAll().then(data => {
@@ -123,6 +122,12 @@ Controller.prototype.deleteUsers = function (listItem, cb) {
   });
 }
 
+// Shopping Items
+Controller.prototype.getFromShoppingItems = function (cb) {
+  db.shoppingItems.findAll().then(data => {
+    cb(data);
+  });
+}
 
 const controller = new Controller();
 
