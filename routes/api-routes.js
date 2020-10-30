@@ -71,9 +71,8 @@ module.exports = function (app) {
                 res.json(data.dataValues);
             } else {
                 // Create new user
-
                 controller.createUsers(req.body, data => {
-                    res.json(data);
+                    res.json(data.dataValues);
                 });
             }
         });

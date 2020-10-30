@@ -22,6 +22,8 @@ $(document).ready(function () {
                     lastName: profile.getFamilyName(),
                     imgUrl: profile.getImageUrl()
                 }
+            }).then(data => {
+                window.location.assign('/planning');
             });
         });
     });
