@@ -124,20 +124,5 @@ Controller.prototype.deleteUsers = function (listItem, cb) {
 
 const controller = new Controller();
 
-// controller.createEvents({
-//   name: "test",
-//   description: "testing",
-// });
-
-// controller.updateEvents({
-//   body: {
-//     name: "test",
-//     description: "testing",
-//   },
-//   id: 3
-// });
-
-// controller.deleteEvents(2);
-
 // Export routes for server.js to use.
 module.exports = controller;
