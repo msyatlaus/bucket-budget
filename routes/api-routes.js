@@ -1,7 +1,7 @@
 const controller = require("../controllers/bucket-budget-controller.js");
 
 module.exports = function (app) {
-    
+
     // Budget Items
     app.get('/api/budgetItems', (req, res) => {
         controller.getFromBudgetItems(data => {
@@ -82,4 +82,10 @@ module.exports = function (app) {
         });
     });
 
+    // Shopping Items
+    app.get('/api/shoppingItems', (req, res) => {
+        controller.getFromShoppingItems(data => {
+            res.json(data[0].dataValues);
+        });
+    });
 }
