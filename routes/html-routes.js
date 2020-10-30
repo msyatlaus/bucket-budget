@@ -10,6 +10,18 @@ module.exports = function (app, rootDirectory) {
     app.get('/planning', (req, res) => {
         console.log(req.session);
 
-        res.sendFile(rootDirectory + '/public/planning.html')
+        if (req.session.isLoggedIn === true) {
+            res.sendFile(rootDirectory + '/public/planning.html')
+        }
+        else {
+            res.redirect('/');
+        }
+    });
+
+    // Log out user and redirect to welcome page
+    app.get('/logout', (req, res) => {
+        req.session.profileId = null;
+        req.session.isLoggedIn = false;
+        res.redirect('/');
     });
 }
