@@ -85,6 +85,43 @@ Controller.prototype.deleteEvents = function (listItem, cb) {
   });
 }
 
+
+// Users
+Controller.prototype.getFromUsers = function (cb) {
+  db.users.findAll().then(data => {
+    cb(data);
+  });
+}
+
+Controller.prototype.createUsers = function (listItem, cb) {
+  db.users.create(listItem).then(data => {
+    cb(data);
+  });
+}
+
+Controller.prototype.updateUsers = function (listItem, cb) {
+  db.users.update(
+    listItem.body,
+    {
+      where: {
+        id: listItem.id
+      }
+    }).then(data => {
+    cb(data);
+  });
+}
+
+Controller.prototype.deleteUsers = function (listItem, cb) {
+  db.users.destroy({
+    where: {
+      id: listItem
+    }
+  }).then(data => {
+    cb(data);
+  });
+}
+
+
 const controller = new Controller();
 
 // controller.createEvents({
