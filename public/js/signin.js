@@ -16,7 +16,7 @@ $(document).ready(function () {
                 method: 'POST',
                 url: '/api/users',
                 data: {
-                    userId: profile.getId(),
+                    profileId: profile.getId(),
                     email: profile.getEmail(),
                     firstName: profile.getGivenName(),
                     lastName: profile.getFamilyName(),

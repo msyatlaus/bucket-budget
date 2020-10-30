@@ -65,13 +65,16 @@ module.exports = function (app) {
 
     app.post('/api/users', (req, res) => {
         // Search for existing user
-        controller.getUserFromProfileId(req.body.userId, data => {
+        controller.getUserFromProfileId(req.body.profileId, data => {
             if (data !== null) {
                 // Found existing user
-                console.log(data.dataValues);
+                res.json(data.dataValues);
             } else {
                 // Create new user
-                console.log("Could not find user");
+
+                controller.createUsers(req.body, data => {
+                    res.json(data);
+                });
             }
         });
     });

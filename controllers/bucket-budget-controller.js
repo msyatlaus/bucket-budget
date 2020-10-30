@@ -93,9 +93,9 @@ Controller.prototype.getFromUsers = function (cb) {
   });
 }
 
-Controller.prototype.getUserFromProfileId = function (checkUserId, cb) {
+Controller.prototype.getUserFromProfileId = function (checkProfileId, cb) {
   db.users.findOne({
-    where: { profileId: checkUserId }
+    where: { profileId: checkProfileId }
   }).then(data => {
     if (data === null) {
       cb(null);
