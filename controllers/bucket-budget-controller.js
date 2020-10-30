@@ -2,10 +2,12 @@ const db = {
   budgetItems: require('../models/budgetItems'),
   users: require('../models/users'),
   events: require('../models/events'),
+  shoppingItems: require('../models/shoppingItems'),
   synchronize: function () {
     this.budgetItems.sequelize.sync();
     this.users.sequelize.sync();
     this.events.sequelize.sync();
+    this.shoppingItems.sequelize.sync();
   }
 }
 
@@ -35,8 +37,8 @@ Controller.prototype.updateBudgetItems = function (listItem, cb) {
         id: listItem.id
       }
     }).then(data => {
-    cb(data);
-  });
+      cb(data);
+    });
 }
 
 Controller.prototype.deleteBudgetItems = function (listItem, cb) {
@@ -71,8 +73,8 @@ Controller.prototype.updateEvents = function (listItem, cb) {
         id: listItem.id
       }
     }).then(data => {
-    cb(data);
-  });
+      cb(data);
+    });
 }
 
 Controller.prototype.deleteEvents = function (listItem, cb) {
@@ -107,8 +109,8 @@ Controller.prototype.updateUsers = function (listItem, cb) {
         id: listItem.id
       }
     }).then(data => {
-    cb(data);
-  });
+      cb(data);
+    });
 }
 
 Controller.prototype.deleteUsers = function (listItem, cb) {
