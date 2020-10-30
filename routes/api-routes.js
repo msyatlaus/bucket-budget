@@ -1,38 +1,68 @@
 const controller = require("../controllers/bucket-budget-controller.js");
 
-// refer to passport.js -- boiler plate code in case we go down the email/password authentication route rather than google sign-in
-// const passport = require('../config/passport');
-
 module.exports = function (app) {
+
+    // Budget Items
     app.get('/api/budgetItems', (req, res) => {
         controller.getFromBudgetItems(data => {
-            console.log(data[0].dataValues);
             res.json(data[0].dataValues);
         });
     });
 
     app.post('/api/budgetItems', (req, res) => {
-        controller.getFromBudgetItems(data => {
-            console.log(data[0].dataValues);
+        controller.createBudgetItems(req.body, data => {
             res.json(data[0].dataValues);
         });
     });
 
     app.put('/api/budgetItems', (req, res) => {
-        controller.getFromBudgetItems(data => {
-            console.log(data[0].dataValues);
+        controller.updateBudgetItems(req.body, data => {
             res.json(data[0].dataValues);
         });
     });
 
-    app.delete('/api/budgetItems', (req, res) => {
-        controller.getFromBudgetItems(data => {
-            console.log(data[0].dataValues);
+    app.delete('/api/budgetItems/:id', (req, res) => {
+
+        controller.deleteBudgetItems(req.params.id, data => {
             res.json(data[0].dataValues);
         });
     });
 
-    // USER TABLE
+
+    // Events
+    app.get('/api/events', (req, res) => {
+        controller.getFromEvents(data => {
+            res.json(data[0].dataValues);
+        });
+    });
+
+    app.post('/api/events', (req, res) => {
+        controller.createEvents(req.body, data => {
+            res.json(data[0].dataValues);
+        });
+    });
+
+    app.put('/api/events', (req, res) => {
+        controller.updateEvents(req.body, data => {
+            res.json(data[0].dataValues);
+        });
+    });
+
+    app.delete('/api/events/:id', (req, res) => {
+
+        controller.deleteEvents(req.params.id, data => {
+            res.json(data[0].dataValues);
+        });
+    });
+
+
+    // Users
+    app.get('/api/users', (req, res) => {
+        controller.getFromUsers(data => {
+            res.json(data[0].dataValues);
+        });
+    });
+
     app.post('/api/users', (req, res) => {
         // Search for existing user
         controller.getUserFromUserId(req.body.userId, data => {
@@ -45,4 +75,24 @@ module.exports = function (app) {
             }
         });
     });
+
+    app.post('/api/users', (req, res) => {
+        controller.createUsers(req.body, data => {
+            res.json(data[0].dataValues);
+        });
+    });
+
+    app.put('/api/users', (req, res) => {
+        controller.updateUsers(req.body, data => {
+            res.json(data[0].dataValues);
+        });
+    });
+
+    app.delete('/api/users/:id', (req, res) => {
+
+        controller.deleteUsers(req.params.id, data => {
+            res.json(data[0].dataValues);
+        });
+    });
+
 }
