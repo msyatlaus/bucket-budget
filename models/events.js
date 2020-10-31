@@ -4,8 +4,7 @@ const connection = require('../config/connection');
 const events = connection.define('events', {
     name: Sequelize.STRING,
     description: Sequelize.TEXT,
-    date_time: Sequelize.DATE,
-    user_profileId: Sequelize.STRING
+    date_time: Sequelize.DATE
 });
 
 module.exports = events;

@@ -98,6 +98,8 @@ Controller.prototype.deleteEvents = function (listItem, cb) {
 Controller.prototype.getFromUsers = function (cb) {
   db.users.findAll().then(data => {
     cb(data);
+  }).catch(err => {
+    if (err) throw err;
   });
 }
 
@@ -110,12 +112,16 @@ Controller.prototype.getUserFromProfileId = function (checkProfileId, cb) {
     } else {
       cb(data);
     }
+  }).catch(err => {
+    if (err) throw err;
   });
 }
 
 Controller.prototype.createUsers = function (listItem, cb) {
   db.users.create(listItem).then(data => {
     cb(data);
+  }).catch(err => {
+    if (err) throw err;
   });
 }
 
@@ -128,6 +134,8 @@ Controller.prototype.updateUsers = function (listItem, cb) {
       }
     }).then(data => {
       cb(data);
+    }).catch(err => {
+      if (err) throw err;
     });
 }
 
@@ -138,6 +146,8 @@ Controller.prototype.deleteUsers = function (listItem, cb) {
     }
   }).then(data => {
     cb(data);
+  }).catch(err => {
+    if (err) throw err;
   });
 }
 
@@ -146,3 +156,19 @@ const controller = new Controller();
 
 // Export routes for server.js to use.
 module.exports = controller;
+
+// TESTING
+
+// controller.createBudgetItems({
+//   name: "Test",
+//   quantity: 5,
+//   price: 6,
+//   userProfileId: "105933895546096475070"
+// });
+
+// controller.createEvents({
+//   name: "Test",
+//   description: "Test Description",
+//   date_time: "2020-10-31 10:00:00",
+//   userProfileId: "105933895546096475070"
+// });
