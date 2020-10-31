@@ -16,7 +16,11 @@ const db = {
   }
 }
 
-db.setAssociations();
+// db.setAssociations();
+db.users.hasMany(db.budgetItems);
+db.users.hasMany(db.events);
+db.budgetItems.belongsTo(db.users);
+db.events.belongsTo(db.users);
 db.synchronize();
 
 const Controller = function () { }
@@ -151,6 +155,21 @@ Controller.prototype.deleteUsers = function (listItem, cb) {
   });
 }
 
+Controller.prototype.getBudgetItemsFromUser = function (userProfileId, cb) {
+  db.users.findAll(
+    {
+      where: {
+        profileId: userProfileId
+      },
+      include: [{
+        model: db.budgetItems
+      }]
+    }
+  ).then(data => {
+    console.log(data);
+    cb(data);
+  });
+}
 
 const controller = new Controller();
 
@@ -158,13 +177,6 @@ const controller = new Controller();
 module.exports = controller;
 
 // TESTING
-
-// controller.createBudgetItems({
-//   name: "Test",
-//   quantity: 5,
-//   price: 6,
-//   userProfileId: "105933895546096475070"
-// });
 
 // controller.createEvents({
 //   name: "Test",
