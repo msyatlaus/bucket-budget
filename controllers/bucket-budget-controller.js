@@ -2,6 +2,13 @@ const db = {
   budgetItems: require('../models/budgetItems'),
   users: require('../models/users'),
   events: require('../models/events'),
+  setAssociations: function () {
+    db.users.hasMany(db.budgetItems);
+    db.users.hasMany(db.events);
+    db.budgetItems.belongsTo(db.users);
+    db.events.belongsTo(db.users);
+
+  },
   synchronize: function () {
     this.budgetItems.sequelize.sync();
     this.users.sequelize.sync();
@@ -9,6 +16,7 @@ const db = {
   }
 }
 
+db.setAssociations();
 db.synchronize();
 
 const Controller = function () { }

@@ -5,7 +5,7 @@ const budgetItems = connection.define('budget_items', {
     name: Sequelize.STRING,
     quantity: Sequelize.INTEGER,
     price: Sequelize.INTEGER,
-    user_id: Sequelize.STRING
+    user_profileId: Sequelize.STRING
 });
 
 module.exports = budgetItems;
