@@ -8,7 +8,6 @@ module.exports = function (app) {
         });
     });
 
-    // http://localhost:3000/api/budgetItems/105933895546096475070
     app.get('/api/budgetItems/:userProfileId', (req, res) => {
         controller.getBudgetItemsFromUser(req.params.userProfileId, data => {
             res.json(data[0].dataValues)
@@ -38,6 +37,12 @@ module.exports = function (app) {
     app.get('/api/events', (req, res) => {
         controller.getFromEvents(data => {
             res.json(data[0].dataValues);
+        });
+    });
+
+    app.get('/api/events/:userProfileId', (req, res) => {
+        controller.getEventsFromUser(req.params.userProfileId, data => {
+            res.json(data[0].dataValues)
         });
     });
 

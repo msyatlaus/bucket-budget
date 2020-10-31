@@ -166,7 +166,21 @@ Controller.prototype.getBudgetItemsFromUser = function (userProfileId, cb) {
       }]
     }
   ).then(data => {
-    console.log(data);
+    cb(data);
+  });
+}
+
+Controller.prototype.getEventsFromUser = function (userProfileId, cb) {
+  db.users.findAll(
+    {
+      where: {
+        profileId: userProfileId
+      },
+      include: [{
+        model: db.events
+      }]
+    }
+  ).then(data => {
     cb(data);
   });
 }
@@ -175,12 +189,3 @@ const controller = new Controller();
 
 // Export routes for server.js to use.
 module.exports = controller;
-
-// TESTING
-
-// controller.createEvents({
-//   name: "Test",
-//   description: "Test Description",
-//   date_time: "2020-10-31 10:00:00",
-//   userProfileId: "105933895546096475070"
-// });
