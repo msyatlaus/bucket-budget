@@ -1,6 +1,17 @@
 const express = require('express');
 const session = require('express-session');
-const config = require('./config/config.js');
+
+let credentials = {};
+
+try {
+    const config = require('./config/config.js');
+    credentials.sessionSecret = config.sessionSecret;
+}
+catch {
+    credentials.sessionSecret = process.env.session_secret;
+}
+
+console.log(credentials);
 
 // Create Express application
 const app = express();
@@ -12,7 +23,7 @@ app.use(express.json());
 
 // Sets up the Session for Google sign in reference
 app.use(session({
-    secret: config.sessionSecret,
+    secret: credentials.sessionSecret,
     resave: false,
     saveUninitialized: true,
     cookie: {
