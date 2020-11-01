@@ -61,8 +61,21 @@ module.exports = function (app) {
     });
 
     app.post('/api/users', (req, res) => {
-        controller.createUsers(req.body, data => {
-            res.json(data[0].dataValues);
+        // Search for existing user
+        controller.getUserFromProfileId(req.body.profileId, data => {
+            if (data !== null) {
+                // Found existing user
+                req.session.profileId = data.dataValues.profileId
+                req.session.isLoggedIn = true;
+                res.json(data.dataValues);
+            } else {
+                // Create new user
+                controller.createUsers(req.body, data => {
+                    req.session.profileId = data.dataValues.profileId
+                    req.session.isLoggedIn = true;
+                    res.json(data.dataValues);
+                });
+            }
         });
     });
 

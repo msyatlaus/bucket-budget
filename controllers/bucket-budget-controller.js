@@ -94,6 +94,18 @@ Controller.prototype.getFromUsers = function (cb) {
   });
 }
 
+Controller.prototype.getUserFromProfileId = function (checkProfileId, cb) {
+  db.users.findOne({
+    where: { profileId: checkProfileId }
+  }).then(data => {
+    if (data === null) {
+      cb(null);
+    } else {
+      cb(data);
+    }
+  });
+}
+
 Controller.prototype.createUsers = function (listItem, cb) {
   db.users.create(listItem).then(data => {
     cb(data);
