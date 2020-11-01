@@ -103,4 +103,11 @@ module.exports = function (app) {
             res.json(data[0].dataValues);
         });
     });
+
+    // Shopping Items
+    app.get('/api/shoppingItems', (req, res) => {
+        controller.getFromShoppingItems(data => {
+            res.json(data[0].dataValues);
+        });
+    });
 }

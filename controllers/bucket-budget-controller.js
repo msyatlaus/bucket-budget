@@ -13,6 +13,7 @@ const db = {
     this.budgetItems.sequelize.sync();
     this.users.sequelize.sync();
     this.events.sequelize.sync();
+    this.shoppingItems.sequelize.sync();
   }
 }
 
@@ -24,7 +25,6 @@ db.events.belongsTo(db.users);
 db.synchronize();
 
 const Controller = function () { }
-
 
 // Budget Items
 Controller.prototype.getFromBudgetItems = function (cb) {
@@ -152,6 +152,13 @@ Controller.prototype.deleteUsers = function (listItem, cb) {
     cb(data);
   }).catch(err => {
     if (err) throw err;
+  });
+}
+
+// Shopping Items
+Controller.prototype.getFromShoppingItems = function (cb) {
+  db.shoppingItems.findAll().then(data => {
+        cb(data);
   });
 }
 
