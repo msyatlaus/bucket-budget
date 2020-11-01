@@ -187,5 +187,48 @@ $('#confirm-trip').click(function () {
         resultObj.push(testArray);
     }
     console.log(resultObj);
+    
+    // for loop?
+    // $.ajax({
+    //     method: "PUT",
+    //     url: "/api/budgetItems",
+    //     data: {
+    //         // name: ,
+    //         // quantity: ,
+    //         // price: ,
+    //         // event_id:
+    //     }
+    // }).then(function () {
+    //     window.location.href = "/planning";
+    // });
+
+    // for loop?
+    // $.ajax({
+    //     method: "PUT",
+    //     url: "/api/events",
+    //     data: {
+    //         // name: ,
+    //         // description: ,
+    //         // date_time: 
+    //     }
+    // }).then(function () {
+    //     window.location.href = "/planning";
+    // });
+
+    // for loop?
+    // $.ajax({
+    //     method: "PUT",
+    //     url: "/api/users",
+    //     data: {
+    //         // profileId: ,
+    //         // firstName: ,
+    //         // lastName: ,
+    //         // imgUrl: ,
+    //         // email:
+    //     }
+    // }).then(function () {
+    //     window.location.href = "/planning";
+    // });
+
 });
 
