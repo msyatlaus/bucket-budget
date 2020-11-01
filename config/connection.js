@@ -3,6 +3,7 @@ const Sequelize = require('sequelize');
 let credentials = {};
 
 try {
+    // Development Credentials
     const config = require('./config.js');
     credentials.database = config.database.db;
     credentials.user = config.database.user;
@@ -10,6 +11,7 @@ try {
     credentials.host = 'localhost';
 }
 catch {
+    // Deployment Credentials
     credentials.database = process.env.db_database;
     credentials.user = process.env.db_user;
     credentials.password = process.env.db_password;

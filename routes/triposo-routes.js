@@ -1,8 +1,23 @@
 const axios = require('axios');
 const config = require('../config/config.js');
 
+let credentials = {};
+
+try {
+    // Development Credentials
+    credentials.apiId = config.triposo.apiId;
+    credentials.apiKey = config.triposo.apiKey;
+}
+catch {
+    // Deployment Credentials
+    credentials.apiId = process.env.triposo_id;
+    credentials.apiKey = process.env.triposo_key;
+}
+
+console.log(credentials);
+
 const triposoUrl = `https://www.triposo.com/api/20200803`;
-const accountParams = `account=${config.triposo.apiId}&token=${config.triposo.apiKey}`;
+const accountParams = `account=${credentials.apiId}&token=${credentials.apiKey}`;
 
 module.exports = function (app) {
     // Get articles and summaries on specific locations
