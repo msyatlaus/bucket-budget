@@ -44,7 +44,7 @@ Cooper -
 
 Contact the engineers directly via LinkedIn:
 
-Nick -
-Shubhangi -
-Bradley -
-Cooper -
+Nick - <a href="https://www.linkedin.com/in/nick-burt/">nick-burt</a>
+Shubhangi - <a href="https://www.linkedin.com/in/shubhi-mundhada/">shubhi-mundhada</a>
+Bradley - <a href="https://www.linkedin.com/in/bradley-guidry-076298187/">bradley-guidry</a>
+Cooper - <a href="https://www.linkedin.com/in/lcahearn/">LCAhearn</a>
