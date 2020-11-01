@@ -34,7 +34,7 @@ Pending
 Get to know our engineers & keep up with their latest updates via GitHub:
 
 
-![Profile Image](https://github.com/nbur4556.png?size=50)
+<a href="https://github.com/nbur4556">![Profile Image](https://github.com/nbur4556.png?size=50)</a>
 ![Badge](https://img.shields.io/badge/Github-nbur4556-4cbbb9)
 <br>
 Nick Burt - Virtuoso Backend & Full-Flex Engineer
