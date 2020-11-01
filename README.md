@@ -1,6 +1,8 @@
 
 # Budget Bucket
 
+![Brand Image](public\assets\welcome\Screen_Shot_2020-10-26_at_5.19.28_PM-removebg-preview.png)
+
 ## Table of Contents
 - [Description](#description)
 - [Tests](#tests)
