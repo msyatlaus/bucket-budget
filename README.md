@@ -1,6 +1,8 @@
 
 # Budget Bucket
 
+![Brand Image](public\assets\welcome\Screen_Shot_2020-10-26_at_5.19.28_PM-removebg-preview.png)
+
 ## Table of Contents
 - [Description](#description)
 - [Tests](#tests)
@@ -32,7 +34,7 @@ Pending
 Get to know our engineers & keep up with their latest updates via GitHub:
 
 
-![Profile Image](https://github.com/nbur4556.png?size=50)
+<a href="https://github.com/nbur4556">![Profile Image](https://github.com/nbur4556.png?size=50)</a>
 ![Badge](https://img.shields.io/badge/Github-nbur4556-4cbbb9)
 <br>
 Nick Burt - Virtuoso Backend & Full-Flex Engineer
