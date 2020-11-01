@@ -81,5 +81,4 @@ module.exports = function (app) {
             res.json(data[0].dataValues);
         });
     });
-
 }
