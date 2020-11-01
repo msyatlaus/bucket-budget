@@ -31,28 +31,32 @@ Pending
 
 Get to know our engineers & keep up with their latest updates via GitHub:
 
-Nick Burt - Virtuoso Backend & Full-Flex Engineer
+
 ![Profile Image](https://github.com/nbur4556.png?size=50)
 ![Badge](https://img.shields.io/badge/Github-nbur4556-4cbbb9)
+<br>
+Nick Burt - Virtuoso Backend & Full-Flex Engineer
 
-Shubhangi Mundhada - Prodigy Frontend UI/UX Architect
 ![Profile Image](https://github.com/smundhada.png?size=50)
 ![Badge](https://img.shields.io/badge/Github-smundhada-4cbbb9)
+<br>
+Shubhangi Mundhada - Prodigy Frontend UI/UX Architect
 
-Bradley Guidry - Project Innovator, Manager & Team Lead
 ![Profile Image](https://github.com/msyatlaus.png?size=50)
 ![Badge](https://img.shields.io/badge/Github-msyatlaus-4cbbb9)
+<br>
+Bradley Guidry - Project Innovator, Manager & Team Lead
 
-Cooper Ahearn - HR & Public Affairs; Auxiliary Support
 ![Profile Image](https://github.com/94Cooper94.png?size=50)
 ![Badge](https://img.shields.io/badge/Github-94Cooper94-4cbbb9)
-
+<br>
+Cooper Ahearn - HR & Public Affairs; Auxiliary Support
 
 ## Contact
 
 Connect with & contact the engineers directly via LinkedIn:
 
-Nick - <a href="https://www.linkedin.com/in/nick-burt/">nick-burt</a>
-Shubhangi - <a href="https://www.linkedin.com/in/shubhi-mundhada/">shubhi-mundhada</a>
-Bradley - <a href="https://www.linkedin.com/in/bradley-guidry-076298187/">bradley-guidry</a>
-Cooper - <a href="https://www.linkedin.com/in/lcahearn/">LCAhearn</a>
+Nick - <a href="https://www.linkedin.com/in/nick-burt/">nick-burt</a><br>
+Shubhangi - <a href="https://www.linkedin.com/in/shubhi-mundhada/">shubhi-mundhada</a><br>
+Bradley - <a href="https://www.linkedin.com/in/bradley-guidry-076298187/">bradley-guidry</a><br>
+Cooper - <a href="https://www.linkedin.com/in/lcahearn/">LCAhearn</a><br>
