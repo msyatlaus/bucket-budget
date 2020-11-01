@@ -35,22 +35,22 @@ Get to know our engineers & keep up with their latest updates via GitHub:
 
 
 <a href="https://github.com/nbur4556">![Profile Image](https://github.com/nbur4556.png?size=50)</a>
-![Badge](https://img.shields.io/badge/Github-nbur4556-4cbbb9)
+<a href="https://github.com/smundhada">![Badge](https://img.shields.io/badge/Github-nbur4556-4cbbb9)</a>
 <br>
 Nick Burt - Virtuoso Backend & Full-Flex Engineer
 
-![Profile Image](https://github.com/smundhada.png?size=50)
-![Badge](https://img.shields.io/badge/Github-smundhada-4cbbb9)
+<a href="https://github.com/smundhada">![Profile Image](https://github.com/smundhada.png?size=50)</a>
+<a href="https://github.com/smundhada">![Badge](https://img.shields.io/badge/Github-smundhada-4cbbb9)</a>
 <br>
 Shubhangi Mundhada - Prodigy Frontend UI/UX Architect
 
-![Profile Image](https://github.com/msyatlaus.png?size=50)
-![Badge](https://img.shields.io/badge/Github-msyatlaus-4cbbb9)
+<a href="https://github.com/smundhada">![Profile Image](https://github.com/msyatlaus.png?size=50)</a>
+<a href="https://github.com/smundhada">![Badge](https://img.shields.io/badge/Github-msyatlaus-4cbbb9)</a>
 <br>
 Bradley Guidry - Project Innovator, Manager & Team Lead
 
-![Profile Image](https://github.com/94Cooper94.png?size=50)
-![Badge](https://img.shields.io/badge/Github-94Cooper94-4cbbb9)
+<a href="https://github.com/smundhada">![Profile Image](https://github.com/94Cooper94.png?size=50)</a>
+<a href="https://github.com/smundhada">![Badge](https://img.shields.io/badge/Github-94Cooper94-4cbbb9)</a>
 <br>
 Cooper Ahearn - HR & Public Affairs; Auxiliary Support
 
