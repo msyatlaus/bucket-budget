@@ -2,6 +2,7 @@ const db = {
   budgetItems: require('../models/budgetItems'),
   users: require('../models/users'),
   events: require('../models/events'),
+  shoppingItems: require('../models/shoppingItems'),
   setAssociations: function () {
     db.users.hasMany(db.budgetItems);
     db.users.hasMany(db.events);
@@ -158,7 +159,7 @@ Controller.prototype.deleteUsers = function (listItem, cb) {
 // Shopping Items
 Controller.prototype.getFromShoppingItems = function (cb) {
   db.shoppingItems.findAll().then(data => {
-        cb(data);
+    cb(data);
   });
 }
 
