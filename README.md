@@ -15,10 +15,8 @@
   You've wanted to travel since the dawn of COVID, and in the uncertain times comes uncertain budgets. We're here to help. Simply give us an idea of what your goals are for your travel arrangements and we'll help you plan the dream trip with your specific budget in mind! Come journey with us to the pristine shores of Destin, FL. Come frolic with us in the gorgeous plains of south Arkansas.
 
 
-** Insert Image / Video Here **
 ## Tests :bar_chart:
 Simply follow the link to our deployed app (kudos to Heroku) and experience the magic! Before you know it you'll have an incredibly organized & concise list of all your traveling necessities.
-** Or here **
 
 
 ## License :page_with_curl:
@@ -58,7 +56,7 @@ Cooper Ahearn - HR & Public Affairs; Auxiliary Support
 
 Connect with & contact the engineers directly via LinkedIn:
 
-:dvd: Nick - <a href="https://www.linkedin.com/in/nick-burt/">nick-burt</a>:dvd:<br> 
-:cd: Shubhangi - <a href="https://www.linkedin.com/in/shubhi-mundhada/">shubhi-mundhada</a>:cd:<br> 
-:dvd: Bradley - <a href="https://www.linkedin.com/in/bradley-guidry-076298187/">bradley-guidry</a>:dvd:<br>
-:cd: Cooper - <a href="https://www.linkedin.com/in/lcahearn/">LCAhearn</a>:cd:<br>
+:dvd: Nick - <a href="https://www.linkedin.com/in/nick-burt/">nick-burt</a> :dvd:<br> 
+:cd: Shubhangi - <a href="https://www.linkedin.com/in/shubhi-mundhada/">shubhi-mundhada</a> :cd:<br> 
+:dvd: Bradley - <a href="https://www.linkedin.com/in/bradley-guidry-076298187/">bradley-guidry</a> :dvd:<br>
+:cd: Cooper - <a href="https://www.linkedin.com/in/lcahearn/">LCAhearn</a> :cd:<br>
