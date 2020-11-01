@@ -58,7 +58,7 @@ Cooper Ahearn - HR & Public Affairs; Auxiliary Support
 
 Connect with & contact the engineers directly via LinkedIn:
 
-:dvd: Nick - <a href="https://www.linkedin.com/in/nick-burt/">nick-burt</a><br> :dvd:
-:cd: Shubhangi - <a href="https://www.linkedin.com/in/shubhi-mundhada/">shubhi-mundhada</a><br> :cd:
-:dvd: Bradley - <a href="https://www.linkedin.com/in/bradley-guidry-076298187/">bradley-guidry</a><br> :dvd:
-:cd: Cooper - <a href="https://www.linkedin.com/in/lcahearn/">LCAhearn</a><br> :cd:
+:dvd: Nick - <a href="https://www.linkedin.com/in/nick-burt/">nick-burt</a>:dvd:<br> 
+:cd: Shubhangi - <a href="https://www.linkedin.com/in/shubhi-mundhada/">shubhi-mundhada</a>:cd:<br> 
+:dvd: Bradley - <a href="https://www.linkedin.com/in/bradley-guidry-076298187/">bradley-guidry</a>:dvd:<br>
+:cd: Cooper - <a href="https://www.linkedin.com/in/lcahearn/">LCAhearn</a>:cd:<br>
