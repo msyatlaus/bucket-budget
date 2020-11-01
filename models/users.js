@@ -2,7 +2,10 @@ const Sequelize = require('sequelize');
 const connection = require('../config/connection');
 
 const users = connection.define('users', {
-    profileId: Sequelize.STRING,
+    profileId: {
+        type: Sequelize.STRING,
+        primaryKey: true
+    },
     firstName: Sequelize.STRING,
     lastName: Sequelize.STRING,
     imgUrl: Sequelize.STRING,

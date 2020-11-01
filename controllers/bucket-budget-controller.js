@@ -2,7 +2,13 @@ const db = {
   budgetItems: require('../models/budgetItems'),
   users: require('../models/users'),
   events: require('../models/events'),
-  shoppingItems: require('../models/shoppingItems'),
+  setAssociations: function () {
+    db.users.hasMany(db.budgetItems);
+    db.users.hasMany(db.events);
+    db.budgetItems.belongsTo(db.users);
+    db.events.belongsTo(db.users);
+
+  },
   synchronize: function () {
     this.budgetItems.sequelize.sync();
     this.users.sequelize.sync();
@@ -11,6 +17,11 @@ const db = {
   }
 }
 
+// db.setAssociations();
+db.users.hasMany(db.budgetItems);
+db.users.hasMany(db.events);
+db.budgetItems.belongsTo(db.users);
+db.events.belongsTo(db.users);
 db.synchronize();
 
 const Controller = function () { }
@@ -91,6 +102,8 @@ Controller.prototype.deleteEvents = function (listItem, cb) {
 Controller.prototype.getFromUsers = function (cb) {
   db.users.findAll().then(data => {
     cb(data);
+  }).catch(err => {
+    if (err) throw err;
   });
 }
 
@@ -103,12 +116,16 @@ Controller.prototype.getUserFromProfileId = function (checkProfileId, cb) {
     } else {
       cb(data);
     }
+  }).catch(err => {
+    if (err) throw err;
   });
 }
 
 Controller.prototype.createUsers = function (listItem, cb) {
   db.users.create(listItem).then(data => {
     cb(data);
+  }).catch(err => {
+    if (err) throw err;
   });
 }
 
@@ -121,6 +138,8 @@ Controller.prototype.updateUsers = function (listItem, cb) {
       }
     }).then(data => {
       cb(data);
+    }).catch(err => {
+      if (err) throw err;
     });
 }
 
@@ -131,12 +150,44 @@ Controller.prototype.deleteUsers = function (listItem, cb) {
     }
   }).then(data => {
     cb(data);
+  }).catch(err => {
+    if (err) throw err;
   });
 }
 
 // Shopping Items
 Controller.prototype.getFromShoppingItems = function (cb) {
   db.shoppingItems.findAll().then(data => {
+        cb(data);
+  });
+}
+
+Controller.prototype.getBudgetItemsFromUser = function (userProfileId, cb) {
+  db.users.findAll(
+    {
+      where: {
+        profileId: userProfileId
+      },
+      include: [{
+        model: db.budgetItems
+      }]
+    }
+  ).then(data => {
+    cb(data);
+  });
+}
+
+Controller.prototype.getEventsFromUser = function (userProfileId, cb) {
+  db.users.findAll(
+    {
+      where: {
+        profileId: userProfileId
+      },
+      include: [{
+        model: db.events
+      }]
+    }
+  ).then(data => {
     cb(data);
   });
 }
