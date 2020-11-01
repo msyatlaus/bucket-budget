@@ -3,7 +3,6 @@
 
 ## Table of Contents
 - [Description](#description)
-- [Installation](#installation)
 - [Tests](#tests)
 - [License](#license)
 - [Technology](#technology)
@@ -12,17 +11,19 @@
 ## Description
   You've wanted to travel since the dawn of COVID, and in the uncertain times comes uncertain budgets. We're here to help. Simply give us an idea of what your goals are for your travel arrangements and we'll help you plan the dream trip with your specific budget in mind! Come journey with us to the pristine shores of Destin, FL. Come frolic with us in the gorgeous plains of south Arkansas.
 
+** Insert Image / Video Here **
   
 ## Tests
-pending
+Simply follow the link to our deployed app (kudos to Heroku) and experience the magic! Before you know it you'll have an incredibly organized & concise list of all your traveling necessities.
 
+** Or here **
 
 ## License
-MIT
+Pending
 
 
 ## Technology
-pending
+Pending
 
 
 ## Contributors
