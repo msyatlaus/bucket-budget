@@ -1,7 +1,6 @@
 const controller = require("../controllers/bucket-budget-controller.js");
 
 module.exports = function (app) {
-    
     // Budget Items
     app.get('/api/budgetItems', (req, res) => {
         controller.getFromBudgetItems(data => {
@@ -27,7 +26,6 @@ module.exports = function (app) {
             res.json(data[0].dataValues);
         });
     });
-
 
     // Events
     app.get('/api/events', (req, res) => {
@@ -55,7 +53,6 @@ module.exports = function (app) {
         });
     });
 
-
     // Users
     app.get('/api/users', (req, res) => {
         controller.getFromUsers(data => {
@@ -78,6 +75,13 @@ module.exports = function (app) {
     app.delete('/api/users/:id', (req, res) => {
 
         controller.deleteUsers(req.params.id, data => {
+            res.json(data[0].dataValues);
+        });
+    });
+
+    // Shopping Items
+    app.get('/api/shoppingItems', (req, res) => {
+        controller.getFromShoppingItems(data => {
             res.json(data[0].dataValues);
         });
     });
