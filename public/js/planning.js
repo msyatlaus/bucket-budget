@@ -87,6 +87,7 @@ $(document).ready(function () {
             });
         });
     }
+    
     function getShoppingList(){
         $.ajax({
             method: "GET",
