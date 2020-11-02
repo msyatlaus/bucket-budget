@@ -100,7 +100,7 @@ $(document).ready(function () {
                 $('#shopping').append($('<tr>').attr('id',$.trim(decodeURIComponent(item.id))).append(
                             $('<td>').text($.trim(decodeURIComponent(item.name))),
                             $('<td>').text($.trim(decodeURIComponent(item.category))),
-                            $('<td>').text($.trim(decodeURIComponent("$" + (((item.price)))                    
+                            $('<td>').text($.trim(decodeURIComponent("$" + (item.price))))                    
                         )
                 )
             });
