@@ -4,7 +4,7 @@
   "description": "Budget your bucket list.",
   "main": "server.js",
   "scripts": {
-    "start": "server.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
