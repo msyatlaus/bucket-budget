@@ -141,21 +141,20 @@ $(document).ready(function () {
 
     $('#tour').on( 'click', 'tr', function () {
 
-        var tourName = this.cells[0].innerHTML;
-        var tourPrice = this.cells[2].innerHTML;
+        var nightName = this.cells[0].innerHTML;
+        var nightPrice = this.cells[2].innerHTML;
         var idSend = this.id; 
         var qtySend = 1; 
 
         var tr = '<tr id = ' + this.id + '>';
-        tr += '<td>' + tourName + '</td>';
-        tr += '<td class=qty><button class="delete" onclick = subQty('+idSend+','+qtySend+','+tourPrice.replace('$', '')+');>-</button> 1 <button class="delete" onclick = addQty('+idSend+','+qtySend+','+tourPrice.replace('$', '')+');>+</button></td>';
-        tr += '<td>' + tourPrice + '</td>';
+        tr += '<td>' + nightName + '</td>';
+        tr += '<td class=qty><button class="delete" onclick = subQty('+idSend+','+qtySend+','+nightPrice.replace('$', '')+');>-</button> 1 <button class="delete" onclick = addQty('+idSend+','+qtySend+','+nightPrice.replace('$', '')+');>+</button></td>';
+        tr += '<td>' + nightPrice + '</td>';
         tr += '</tr>';        
         $('#subtotals').append(tr);
 
-        addCalBudget(tourPrice.replace('$', ''), qtySend);
+        addCalBudget(nightPrice.replace('$', ''), qtySend);
     });
-
 
 });
 
