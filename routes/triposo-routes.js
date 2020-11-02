@@ -14,8 +14,6 @@ catch {
     credentials.apiKey = process.env.triposo_key;
 }
 
-console.log(credentials);
-
 const triposoUrl = `https://www.triposo.com/api/20200803`;
 const accountParams = `account=${credentials.apiId}&token=${credentials.apiKey}`;
 

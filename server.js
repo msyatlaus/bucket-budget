@@ -13,8 +13,6 @@ catch {
     credentials.PORT = process.env.PORT;
 }
 
-console.log(credentials);
-
 // Create Express application
 const app = express();
 

@@ -18,8 +18,6 @@ catch {
     credentials.host = process.env.db_host;
 }
 
-console.log(credentials);
-
 const seqConnection = new Sequelize(credentials.database, credentials.user, credentials.password, {
     host: credentials.host,
     port: 3306,
