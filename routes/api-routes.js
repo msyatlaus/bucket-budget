@@ -15,9 +15,10 @@ module.exports = function (app) {
     });
 
     app.post('/api/budgetItems', (req, res) => {
-        console.log(req.body);
+        req.body.userProfileId = req.session.profileId;
+
         controller.createBudgetItems(req.body, data => {
-            res.json(data[0].dataValues);
+            res.json(data.dataValues);
         });
     });
 
@@ -28,7 +29,6 @@ module.exports = function (app) {
     });
 
     app.delete('/api/budgetItems/:id', (req, res) => {
-
         controller.deleteBudgetItems(req.params.id, data => {
             res.json(data[0].dataValues);
         });
@@ -60,7 +60,6 @@ module.exports = function (app) {
     });
 
     app.delete('/api/events/:id', (req, res) => {
-
         controller.deleteEvents(req.params.id, data => {
             res.json(data[0].dataValues);
         });

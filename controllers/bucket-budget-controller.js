@@ -35,7 +35,6 @@ Controller.prototype.getFromBudgetItems = function (cb) {
 }
 
 Controller.prototype.createBudgetItems = function (listItem, cb) {
-  console.log(listItem);
   db.budgetItems.create(listItem).then(data => {
     cb(data);
   });
