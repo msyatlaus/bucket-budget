@@ -182,7 +182,12 @@ $(document).ready(function () {
         var idSend = this.id; 
         var qtySend = 1; 
 
-
+        var tr = '<tr id = ' + this.id + '>';
+        tr += '<td>' + nightName + '</td>';
+        tr += '<td class=qty><button class="delete" onclick = subQty('+idSend+','+qtySend+','+nightPrice.replace('$', '')+');>-</button> 1 <button class="delete" onclick = addQty('+idSend+','+qtySend+','+nightPrice.replace('$', '')+');>+</button></td>';
+        tr += '<td>' + nightPrice + '</td>';
+        tr += '</tr>';        
+        $('#subtotals').append(tr);
 
         addCalBudget(nightPrice.replace('$', ''), qtySend);
     });
