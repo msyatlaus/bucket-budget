@@ -206,17 +206,18 @@ $('#confirm-trip').click(function () {
     resultObj.shift();
     console.log(resultObj);
 
-    $.ajax({
-        method: "PUT",
-        url: "/api/budgetItems",
-        data: {
-            name: resultObj[1],
-            quantity: resultObj[2],
-            price: resultObj[3]
-        }
-    }).then(function () {
-        window.location.href = "/planning";
+    $.each( resultObj, function( key, value ) {
+        $.ajax({
+            method: "POST",
+            url: "/api/budgetItems",
+            data: {
+                name: value[1],
+                quantity: value[2],
+                price: value[3]
+            }
+        });
     });
+
     
     // for loop?
     // $.ajax({
