@@ -15,6 +15,7 @@ module.exports = function (app) {
     });
 
     app.post('/api/budgetItems', (req, res) => {
+        console.log(req.body);
         controller.createBudgetItems(req.body, data => {
             res.json(data[0].dataValues);
         });
@@ -107,7 +108,7 @@ module.exports = function (app) {
     // Shopping Items
     app.get('/api/shoppingItems', (req, res) => {
         controller.getFromShoppingItems(data => {
-            res.json(data[0].dataValues);
+            res.json(data);
         });
     });
 }
