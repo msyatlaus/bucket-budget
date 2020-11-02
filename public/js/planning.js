@@ -16,6 +16,7 @@ $(document).ready(function () {
         getDining();
         getNight();
         getTour();
+        getShoppingList();
         addCalBudget(0, 0);
     }
 
@@ -87,11 +88,11 @@ $(document).ready(function () {
             });
         });
     }
-    
+
     function getShoppingList(){
         $.ajax({
             method: "GET",
-            url: "/triposo/highlights/hotels/" + city
+            url: "/api/shoppingItems" + city
         }).then(function (data) {
             console.log(data);
 
