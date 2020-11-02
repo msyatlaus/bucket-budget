@@ -1,10 +1,11 @@
 const axios = require('axios');
-const config = require('../config/config.js');
+
 
 let credentials = {};
 
 try {
     // Development Credentials
+    const config = require('../config/config.js');
     credentials.apiId = config.triposo.apiId;
     credentials.apiKey = config.triposo.apiKey;
 }
