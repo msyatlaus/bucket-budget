@@ -1,6 +1,5 @@
 const axios = require('axios');
 
-
 let credentials = {};
 
 try {
