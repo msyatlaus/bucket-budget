@@ -8,8 +8,8 @@ module.exports = function (app) {
         });
     });
 
-    app.get('/api/budgetItems/:userProfileId', (req, res) => {
-        controller.getBudgetItemsFromUser(req.params.userProfileId, data => {
+    app.get('/api/budgetItemsOfUser', (req, res) => {
+        controller.getBudgetItemsFromUser(req.session.profileId, data => {
             res.json(data[0].dataValues)
         });
     });
@@ -23,26 +23,30 @@ module.exports = function (app) {
     });
 
     app.put('/api/budgetItems', (req, res) => {
+        req.body.userProfileId = req.session.profileId;
+
         controller.updateBudgetItems(req.body, data => {
             res.json(data[0].dataValues);
         });
     });
 
-    app.delete('/api/budgetItems/:id', (req, res) => {
-        controller.deleteBudgetItems(req.params.id, data => {
+    app.delete('/api/budgetItems', (req, res) => {
+        controller.deleteBudgetItems(req.session.profileId, data => {
             res.json(data[0].dataValues);
         });
     });
 
     // Events
     app.get('/api/events', (req, res) => {
+        req.body.userProfileId = req.session.profileId;
+
         controller.getFromEvents(data => {
             res.json(data[0].dataValues);
         });
     });
 
-    app.get('/api/events/:userProfileId', (req, res) => {
-        controller.getEventsFromUser(req.params.userProfileId, data => {
+    app.get('/api/eventsOfUser', (req, res) => {
+        controller.getEventsFromUser(req.session.profileId, data => {
             res.json(data[0].dataValues)
         });
     });
@@ -59,8 +63,8 @@ module.exports = function (app) {
         });
     });
 
-    app.delete('/api/events/:id', (req, res) => {
-        controller.deleteEvents(req.params.id, data => {
+    app.delete('/api/events', (req, res) => {
+        controller.deleteEvents(req.session.profileId, data => {
             res.json(data[0].dataValues);
         });
     });
@@ -97,9 +101,8 @@ module.exports = function (app) {
         });
     });
 
-    app.delete('/api/users/:id', (req, res) => {
-
-        controller.deleteUsers(req.params.id, data => {
+    app.delete('/api/users', (req, res) => {
+        controller.deleteUsers(req.session.profileId, data => {
             res.json(data[0].dataValues);
         });
     });
