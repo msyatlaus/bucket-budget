@@ -175,6 +175,18 @@ $(document).ready(function () {
         addCalBudget(nightPrice.replace('$', ''), qtySend);
     });
 
+    $('#shopping').on( 'click', 'tr', function () {
+
+        var nightName = this.cells[0].innerHTML;
+        var nightPrice = this.cells[2].innerHTML;
+        var idSend = this.id; 
+        var qtySend = 1; 
+
+
+
+        addCalBudget(nightPrice.replace('$', ''), qtySend);
+    });
+
 });
 
 function subQty(id, qty, price){
