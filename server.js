@@ -40,6 +40,6 @@ require('./routes/api-routes')(app);
 require('./routes/html-routes')(app, __dirname);
 require('./routes/triposo-routes')(app);
 
-app.listen(PORT, () => {
+app.listen(credentials.PORT, () => {
     console.log("server running on http://localhost:" + credentials.PORT);
 });
