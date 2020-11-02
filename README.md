@@ -1,7 +1,7 @@
 
 # Budget Bucket
 
-![Brand Image](./public/assets/welcome/Screen_Shot_2020-10-26_at_5.19.28_PM-removebg-preview.png)
+![Brand Image](./public/assets/image/Screen_Shot_2020-10-26_at_5.19.28_PM-removebg-preview.png)
 
 ## Table of Contents :file_folder:
 - [Description](#description)
