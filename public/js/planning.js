@@ -203,7 +203,20 @@ $('#confirm-trip').click(function () {
         }
         resultObj.push(testArray);
     }
+    resultObj.shift();
     console.log(resultObj);
+
+    $.ajax({
+        method: "PUT",
+        url: "/api/budgetItems",
+        data: {
+            name: resultObj[1],
+            quantity: resultObj[2],
+            price: resultObj[3]
+        }
+    }).then(function () {
+        window.location.href = "/planning";
+    });
     
     // for loop?
     // $.ajax({
@@ -219,18 +232,7 @@ $('#confirm-trip').click(function () {
     //     window.location.href = "/planning";
     // });
 
-    // for loop?
-    // $.ajax({
-    //     method: "PUT",
-    //     url: "/api/events",
-    //     data: {
-    //         // name: ,
-    //         // description: ,
-    //         // date_time: 
-    //     }
-    // }).then(function () {
-    //     window.location.href = "/planning";
-    // });
+
 
     // for loop?
     // $.ajax({
