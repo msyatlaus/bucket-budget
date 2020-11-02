@@ -92,7 +92,7 @@ $(document).ready(function () {
     function getShoppingList(){
         $.ajax({
             method: "GET",
-            url: "/api/shoppingItems" + city
+            url: "/api/shoppingItems"
         }).then(function (data) {
             console.log(data);
 
