@@ -29,8 +29,8 @@ $(document).ready(function () {
             $.each(data, function(i, item) {  
                 $('#hotels').append($('<tr>').attr('id',$.trim(decodeURIComponent(item.id))).append(
                              $('<td>').text($.trim(decodeURIComponent(item.name))),
-                             $('<td>').text($.trim(decodeURIComponent(item.hotels_score.toFixed(2)))),
-                             $('<td>').text($.trim(decodeURIComponent("$" + (((item.hotels_score)/2)*100).toFixed(2))))                    
+                             $('<td>').text($.trim(decodeURIComponent(item.hotels_score.toFixed()))),
+                             $('<td>').text($.trim(decodeURIComponent("$" + (((item.hotels_score)/2)*100).toFixed())))                    
                            )
                 )
             });
@@ -46,8 +46,8 @@ $(document).ready(function () {
             $.each(data, function(i, item) {  
                 $('#dining').append($('<tr>').attr('id',$.trim(decodeURIComponent(item.id))).append(
                              $('<td>').text($.trim(decodeURIComponent(item.name))),
-                             $('<td>').text($.trim(decodeURIComponent(item.score.toFixed(2)))),
-                             $('<td>').text($.trim(decodeURIComponent("$" + (((item.score)/2)*10).toFixed(2))))                    
+                             $('<td>').text($.trim(decodeURIComponent(item.score.toFixed()))),
+                             $('<td>').text($.trim(decodeURIComponent("$" + (((item.score)/2)*10).toFixed())))                    
                            )
                 )
             });
@@ -63,8 +63,8 @@ $(document).ready(function () {
             $.each(data, function(i, item) {  
                 $('#night').append($('<tr>').attr('id',$.trim(decodeURIComponent(item.id))).append(
                              $('<td>').text($.trim(decodeURIComponent(item.name))),
-                             $('<td>').text($.trim(decodeURIComponent(item.score.toFixed(2)))),
-                             $('<td>').text($.trim(decodeURIComponent("$" + (((item.score)/2)*5).toFixed(2))))                    
+                             $('<td>').text($.trim(decodeURIComponent(item.score.toFixed()))),
+                             $('<td>').text($.trim(decodeURIComponent("$" + (((item.score)/2)*5).toFixed())))                    
                            )
                 )
             });
@@ -80,8 +80,8 @@ $(document).ready(function () {
             $.each(data, function(i, item) {  
                 $('#tour').append($('<tr>').attr('id',$.trim(decodeURIComponent(item.id))).append(
                              $('<td>').text($.trim(decodeURIComponent(item.name))),
-                             $('<td>').text($.trim(decodeURIComponent(item.score.toFixed(2)))),
-                             $('<td>').text($.trim(decodeURIComponent("$" + (((item.score)/2)*7).toFixed(2))))                    
+                             $('<td>').text($.trim(decodeURIComponent(item.score.toFixed()))),
+                             $('<td>').text($.trim(decodeURIComponent("$" + (((item.score)/2)*7).toFixed())))                    
                            )
                 )
             });
@@ -183,13 +183,13 @@ function addQty(id, qty, price){
 function addCalBudget(price, qty){
     totalSpending = totalSpending + (price * qty); 
     initBudget = initBudget - (price * qty); 
-    $('.budgetCal').html('<h7>Total Cost: $' + totalSpending.toFixed(2) + '</h7><h7>Budget Remaining: $' + initBudget.toFixed(2)+ '</h7>');
+    $('.budgetCal').html('<h7>Total Cost: $' + totalSpending.toFixed() + '</h7><h7>Budget Remaining: $' + initBudget.toFixed()+ '</h7>');
 }
 
 function dedCalBudget(price, qty){
     totalSpending = totalSpending - (price * qty); 
     initBudget = initBudget + (price * qty); 
-    $('.budgetCal').html('<h7>Total Cost: $' + totalSpending.toFixed(2) + '</h7><h7>Budget Remaining: $' + initBudget.toFixed(2)+ '</h7>');
+    $('.budgetCal').html('<h7>Total Cost: $' + totalSpending.toFixed() + '</h7><h7>Budget Remaining: $' + initBudget.toFixed()+ '</h7>');
 }
 
 $('#confirm-trip').click(function () {
