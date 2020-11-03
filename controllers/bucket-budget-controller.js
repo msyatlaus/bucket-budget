@@ -197,35 +197,45 @@ Controller.prototype.getFromShoppingItems = function (cb) {
   });
 }
 
-Controller.prototype.getBudgetItemsFromUser = function (userProfileId, cb) {
-  db.users.findAll(
-    {
-      where: {
-        profileId: userProfileId
-      },
-      include: [{
-        model: db.budgetItems
-      }]
-    }
-  ).then(data => {
+// Joins
+Controller.prototype.getBudgetItemsFromTrips = function (tripsId, cb) {
+  db.trips.findAll({
+    where: {
+      id: tripsId
+    },
+    include: [{
+      model: db.budgetItems
+    }]
+  }).then(data => {
     cb(data);
   });
-}
+};
 
-Controller.prototype.getEventsFromUser = function (userProfileId, cb) {
-  db.users.findAll(
-    {
-      where: {
-        profileId: userProfileId
-      },
-      include: [{
-        model: db.events
-      }]
-    }
-  ).then(data => {
+Controller.prototype.getEventsFromTrips = function (tripsId, cb) {
+  db.trips.findAll({
+    where: {
+      id: tripsId
+    },
+    include: [{
+      model: db.events
+    }]
+  }).then(data => {
     cb(data);
   });
-}
+};
+
+Controller.prototype.getTripsFromUsers = function (userProfileId, cb) {
+  db.users.findAll({
+    where: {
+      profileId: userProfileId
+    },
+    include: [{
+      model: db.trips
+    }]
+  }).then(data => {
+    cb(data);
+  });
+};
 
 const controller = new Controller();
 
