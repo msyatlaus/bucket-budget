@@ -184,7 +184,7 @@ $(document).ready(function () {
 
         var tr = '<tr id = ' + this.id + '>';
         tr += '<td>' + nightName + '</td>';
-        tr += '<td class=qty><button class="delete" onclick = subQty('+idSend+','+qtySend+','+nightPrice.replace('$', '')+');>-</button> 1 <button class="delete" onclick = addQty('+idSend+','+qtySend+','+nightPrice.replace('$', '')+');>+</button></td>';
+        tr += '<td class=qty><button class="delete" onclick = subQtySp('+idSend+','+qtySend+','+nightPrice.replace('$', '')+');>-</button> 1 <button class="delete" onclick = addQtySp('+idSend+','+qtySend+','+nightPrice.replace('$', '')+');>+</button></td>';
         tr += '<td>' + nightPrice + '</td>';
         tr += '</tr>';        
         $('#subtotals').append(tr);
@@ -212,6 +212,28 @@ function addQty(id, qty, price){
         $('table#subtotals tr#'+idClick+'').remove();
     }else{
         $('#subtotals #'+idClick+' .qty').html('<button class="delete" onclick = subQty('+idClick+','+qtyClick+','+price+');>-</button> '+qtyClick+' <button class="delete" onclick = addQty('+idClick+','+qtyClick+','+price+');>+</button>');
+    }
+    addCalBudget(price, 1);
+}
+
+function subQtySp(id, qty, price){
+    var idClick = id; 
+    var qtyClick = qty - 1; 
+    if (qtyClick === 0){
+        $('table#subtotals tr#'+idClick+'').remove();
+    }else{
+        $('#subtotals #'+idClick+' .qty').html('<button class="delete" onclick = subQtySp('+idClick+','+qtyClick+','+price+');>-</button> '+qtyClick+' <button class="delete" onclick = addQtySp('+idClick+','+qtyClick+','+price+');>+</button>');
+    }
+    dedCalBudget(price, 1);
+}
+
+function addQtySp(id, qty, price){
+    var idClick = id; 
+    var qtyClick = qty + 1; 
+    if (qtyClick === 0){
+        $('table#subtotals tr#'+idClick+'').remove();
+    }else{
+        $('#subtotals #'+idClick+' .qty').html('<button class="delete" onclick = subQtySp('+idClick+','+qtyClick+','+price+');>-</button> '+qtyClick+' <button class="delete" onclick = addQtySp('+idClick+','+qtyClick+','+price+');>+</button>');
     }
     addCalBudget(price, 1);
 }

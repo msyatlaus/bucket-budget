@@ -22,7 +22,7 @@ html,body{
     padding: 20px;
     font-size: 30px;
   }
-.item1 { grid-area: header; }
+.item1 { grid-area: header; padding-left: 30px;}
 .item2 { grid-area: menu; }
 .item3 { grid-area: main; }
 .navbar-brand {
