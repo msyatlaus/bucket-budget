@@ -9,6 +9,7 @@ module.exports = function (app) {
     });
 
     app.get('/api/budgetItemsOfUser', (req, res) => {
+        console.log(req.session.profileId);
         controller.getBudgetItemsFromUser(req.session.profileId, data => {
             res.json(data[0].dataValues)
         });
