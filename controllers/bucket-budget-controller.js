@@ -49,7 +49,6 @@ Controller.prototype.updateBudgetItems = function (listItem, cb) {
         id: parseInt(listItem.id)
       }
     }).then(data => {
-      console.log(data);
       cb(data);
     });
 }
@@ -63,7 +62,6 @@ Controller.prototype.deleteBudgetItems = function (listItem, cb) {
     cb(data);
   });
 }
-
 
 // Events
 Controller.prototype.getFromEvents = function (cb) {
@@ -100,6 +98,40 @@ Controller.prototype.deleteEvents = function (listItem, cb) {
   });
 }
 
+// Trips
+Controller.prototype.getFromTrips = function (cb) {
+  db.trips.findAll().then(data => {
+    cb(data);
+  });
+}
+
+Controller.prototype.createTrips = function (listItem, cb) {
+  db.trips.create(listItem).then(data => {
+    cb(data);
+  });
+}
+
+Controller.prototype.updateTrips = function (listItem, cb) {
+  db.trips.update(
+    listItem,
+    {
+      where: {
+        id: parseInt(listItem.id)
+      }
+    }).then(data => {
+      cb(data);
+    });
+}
+
+Controller.prototype.deleteTrips = function (listItem, cb) {
+  db.trips.destroy({
+    where: {
+      id: listItem
+    }
+  }).then(data => {
+    cb(data);
+  });
+}
 
 // Users
 Controller.prototype.getFromUsers = function (cb) {
