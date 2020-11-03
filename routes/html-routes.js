@@ -14,6 +14,16 @@ module.exports = function (app, rootDirectory) {
         }
     });
 
+    // Planned Page
+    app.get('/planned', (req, res) => {
+        if (req.session.isLoggedIn === true) {
+            res.sendFile(rootDirectory + '/public/planned.html')
+        }
+        else {
+            res.redirect('/');
+        }
+    });
+
     // Log out user and redirect to welcome page
     app.get('/logout', (req, res) => {
         req.session.profileId = null;
