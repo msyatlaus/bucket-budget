@@ -1,7 +1,7 @@
 
 # Budget Bucket :page_with_curl:
 
-![Brand Image](./public/assets/welcome/Screen_Shot_2020-10-26_at_5.19.28_PM-removebg-preview.png)
+![Brand Image](./public/assets/image/Screen_Shot_2020-10-26_at_5.19.28_PM-removebg-preview.png)
 
 ## Table of Contents :file_folder:
 - [Description](#description)
@@ -26,7 +26,6 @@ Backend: Node.js, Express, mySQL, Sequelize, Heroku, & GitHub. <br>
 ## Contributors :milky_way:
 
 Get to know our engineers & keep up with their latest updates via GitHub:
-
 
 <a href="https://github.com/nbur4556">![Profile Image](https://github.com/nbur4556.png?size=50)</a>
 <a href="https://github.com/nbur4556">![Badge](https://img.shields.io/badge/Github-nbur4556-4cbbb9)</a>

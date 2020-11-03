@@ -16,6 +16,7 @@ $(document).ready(function () {
         getDining();
         getNight();
         getTour();
+        getShoppingList();
         addCalBudget(0, 0);
     }
 
@@ -29,8 +30,8 @@ $(document).ready(function () {
             $.each(data, function(i, item) {  
                 $('#hotels').append($('<tr>').attr('id',$.trim(decodeURIComponent(item.id))).append(
                              $('<td>').text($.trim(decodeURIComponent(item.name))),
-                             $('<td>').text($.trim(decodeURIComponent(item.hotels_score.toFixed(2)))),
-                             $('<td>').text($.trim(decodeURIComponent("$" + (((item.hotels_score)/2)*100).toFixed(2))))                    
+                             $('<td>').text($.trim(decodeURIComponent(item.hotels_score.toFixed()))),
+                             $('<td>').text($.trim(decodeURIComponent("$" + (((item.hotels_score)/2)*100).toFixed())))                    
                            )
                 )
             });
@@ -46,8 +47,8 @@ $(document).ready(function () {
             $.each(data, function(i, item) {  
                 $('#dining').append($('<tr>').attr('id',$.trim(decodeURIComponent(item.id))).append(
                              $('<td>').text($.trim(decodeURIComponent(item.name))),
-                             $('<td>').text($.trim(decodeURIComponent(item.score.toFixed(2)))),
-                             $('<td>').text($.trim(decodeURIComponent("$" + (((item.score)/2)*10).toFixed(2))))                    
+                             $('<td>').text($.trim(decodeURIComponent(item.score.toFixed()))),
+                             $('<td>').text($.trim(decodeURIComponent("$" + (((item.score)/2)*10).toFixed())))                    
                            )
                 )
             });
@@ -63,8 +64,8 @@ $(document).ready(function () {
             $.each(data, function(i, item) {  
                 $('#night').append($('<tr>').attr('id',$.trim(decodeURIComponent(item.id))).append(
                              $('<td>').text($.trim(decodeURIComponent(item.name))),
-                             $('<td>').text($.trim(decodeURIComponent(item.score.toFixed(2)))),
-                             $('<td>').text($.trim(decodeURIComponent("$" + (((item.score)/2)*10).toFixed(2))))                    
+                             $('<td>').text($.trim(decodeURIComponent(item.score.toFixed()))),
+                             $('<td>').text($.trim(decodeURIComponent("$" + (((item.score)/2)*5).toFixed())))                    
                            )
                 )
             });
@@ -74,15 +75,33 @@ $(document).ready(function () {
     function getTour(){
         $.ajax({
             method: "GET",
-            url: "/triposo/highlights/tag/" + city + '/tour'
+            url: "/triposo/tour/" + city 
         }).then(function (data) {
             console.log(data);
             $.each(data, function(i, item) {  
-                $('#night').append($('<tr>').attr('id',$.trim(decodeURIComponent(item.id))).append(
+                $('#tour').append($('<tr>').attr('id',$.trim(decodeURIComponent(item.id))).append(
                              $('<td>').text($.trim(decodeURIComponent(item.name))),
-                             $('<td>').text($.trim(decodeURIComponent(item.score.toFixed(2)))),
-                             $('<td>').text($.trim(decodeURIComponent("$" + (((item.score)/2)*10).toFixed(2))))                    
+                             $('<td>').text($.trim(decodeURIComponent(item.score.toFixed()))),
+                             $('<td>').text($.trim(decodeURIComponent("$" + (((item.score)/2)*7).toFixed())))                    
                            )
+                )
+            });
+        });
+    }
+
+    function getShoppingList(){
+        $.ajax({
+            method: "GET",
+            url: "/api/shoppingItems"
+        }).then(function (data) {
+            console.log(data);
+
+            $.each(data, function(i, item) {  
+                $('#shopping').append($('<tr>').attr('id',$.trim(decodeURIComponent(item.id))).append(
+                            $('<td>').text($.trim(decodeURIComponent(item.name))),
+                            $('<td>').text($.trim(decodeURIComponent(item.category))),
+                            $('<td>').text($.trim(decodeURIComponent("$" + (item.price))))                    
+                        )
                 )
             });
         });
@@ -139,6 +158,40 @@ $(document).ready(function () {
         addCalBudget(nightPrice.replace('$', ''), qtySend);
     });
 
+    $('#tour').on( 'click', 'tr', function () {
+
+        var nightName = this.cells[0].innerHTML;
+        var nightPrice = this.cells[2].innerHTML;
+        var idSend = this.id; 
+        var qtySend = 1; 
+
+        var tr = '<tr id = ' + this.id + '>';
+        tr += '<td>' + nightName + '</td>';
+        tr += '<td class=qty><button class="delete" onclick = subQty('+idSend+','+qtySend+','+nightPrice.replace('$', '')+');>-</button> 1 <button class="delete" onclick = addQty('+idSend+','+qtySend+','+nightPrice.replace('$', '')+');>+</button></td>';
+        tr += '<td>' + nightPrice + '</td>';
+        tr += '</tr>';        
+        $('#subtotals').append(tr);
+
+        addCalBudget(nightPrice.replace('$', ''), qtySend);
+    });
+
+    $('#shopping').on( 'click', 'tr', function () {
+
+        var nightName = this.cells[0].innerHTML;
+        var nightPrice = this.cells[2].innerHTML;
+        var idSend = this.id; 
+        var qtySend = 1; 
+
+        var tr = '<tr id = ' + this.id + '>';
+        tr += '<td>' + nightName + '</td>';
+        tr += '<td class=qty><button class="delete" onclick = subQty('+idSend+','+qtySend+','+nightPrice.replace('$', '')+');>-</button> 1 <button class="delete" onclick = addQty('+idSend+','+qtySend+','+nightPrice.replace('$', '')+');>+</button></td>';
+        tr += '<td>' + nightPrice + '</td>';
+        tr += '</tr>';        
+        $('#subtotals').append(tr);
+
+        addCalBudget(nightPrice.replace('$', ''), qtySend);
+    });
+
 });
 
 function subQty(id, qty, price){
@@ -166,13 +219,13 @@ function addQty(id, qty, price){
 function addCalBudget(price, qty){
     totalSpending = totalSpending + (price * qty); 
     initBudget = initBudget - (price * qty); 
-    $('.budgetCal').html('<h7>Total Cost: $' + totalSpending.toFixed(2) + '</h7><h7>Budget Remaining: $' + initBudget.toFixed(2)+ '</h7>');
+    $('.budgetCal').html('<h7>Total Cost: $' + totalSpending.toFixed() + '</h7><h7>Budget Remaining: $' + initBudget.toFixed()+ '</h7>');
 }
 
 function dedCalBudget(price, qty){
     totalSpending = totalSpending - (price * qty); 
     initBudget = initBudget + (price * qty); 
-    $('.budgetCal').html('<h7>Total Cost: $' + totalSpending.toFixed(2) + '</h7><h7>Budget Remaining: $' + initBudget.toFixed(2)+ '</h7>');
+    $('.budgetCal').html('<h7>Total Cost: $' + totalSpending.toFixed() + '</h7><h7>Budget Remaining: $' + initBudget.toFixed()+ '</h7>');
 }
 
 $('#confirm-trip').click(function () {
@@ -186,49 +239,22 @@ $('#confirm-trip').click(function () {
         }
         resultObj.push(testArray);
     }
+    resultObj.shift();
     console.log(resultObj);
-    
-    // for loop?
-    // $.ajax({
-    //     method: "PUT",
-    //     url: "/api/budgetItems",
-    //     data: {
-    //         // name: ,
-    //         // quantity: ,
-    //         // price: ,
-    //         // event_id:
-    //     }
-    // }).then(function () {
-    //     window.location.href = "/planning";
-    // });
 
-    // for loop?
-    // $.ajax({
-    //     method: "PUT",
-    //     url: "/api/events",
-    //     data: {
-    //         // name: ,
-    //         // description: ,
-    //         // date_time: 
-    //     }
-    // }).then(function () {
-    //     window.location.href = "/planning";
-    // });
-
-    // for loop?
-    // $.ajax({
-    //     method: "PUT",
-    //     url: "/api/users",
-    //     data: {
-    //         // profileId: ,
-    //         // firstName: ,
-    //         // lastName: ,
-    //         // imgUrl: ,
-    //         // email:
-    //     }
-    // }).then(function () {
-    //     window.location.href = "/planning";
-    // });
+    $.each( resultObj, function( key, value ) {
+        $.ajax({
+            method: "POST",
+            url: "/api/budgetItems",
+            data: {
+                name: value[1],
+                quantity: parseInt(value[2]),
+                price: parseInt(value[3])
+            }
+        });
+    });
 
 });
+
+
 

@@ -4,18 +4,30 @@ module.exports = function (app, rootDirectory) {
         res.sendFile(rootDirectory + '/public/welcome.html');
     });
 
-    // Sign Up Page
-    app.get('/signup', (req, res) => {
-        res.sendFile(rootDirectory + '/public/signup.html')
-    });
-
-    // Sign In Page
-    app.get('/signin', (req, res) => {
-        res.sendFile(rootDirectory + '/public/signin.html')
-    });
-
     // Planning Page
     app.get('/planning', (req, res) => {
-        res.sendFile(rootDirectory + '/public/planning.html')
+        if (req.session.isLoggedIn === true) {
+            res.sendFile(rootDirectory + '/public/planning.html')
+        }
+        else {
+            res.redirect('/');
+        }
+    });
+
+    // Planned Page
+    app.get('/planned', (req, res) => {
+        if (req.session.isLoggedIn === true) {
+            res.sendFile(rootDirectory + '/public/planned.html')
+        }
+        else {
+            res.redirect('/');
+        }
+    });
+
+    // Log out user and redirect to welcome page
+    app.get('/logout', (req, res) => {
+        req.session.profileId = null;
+        req.session.isLoggedIn = false;
+        res.redirect('/');
     });
 }

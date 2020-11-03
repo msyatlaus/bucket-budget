@@ -1,10 +1,10 @@
 const Sequelize = require('sequelize');
 const connection = require('../config/connection');
 
-const budgetItems = connection.define('budget_items', {
+const shoppingItems = connection.define('shopping_items', {
     name: Sequelize.STRING,
-    quantity: Sequelize.INTEGER,
+    category: Sequelize.STRING,
     price: Sequelize.INTEGER
 });
 
-module.exports = budgetItems;
+module.exports = shoppingItems;
