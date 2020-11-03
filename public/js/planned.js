@@ -6,7 +6,7 @@ $(document).ready(function () {
     }).then(function (data) {
         console.log(data);
         $.each(data.budget_items, function (i, item) {
-            totalSpending = totalSpending + item.price;
+            totalSpending = totalSpending + (item.price * item.quantity);
             var tr = '<tr id = ' + item.id + '>';
             tr += '<td>' + item.name + '</td>';
             tr += '<td class=qty><button class="delete" onclick = subQty(' + item.id + ',' + item.quantity + ',' + item.price + ');>-</button> ' + item.quantity + ' <button class="delete" onclick = addQty(' + item.id + ',' + item.quantity + ',' + item.price + ');>+</button></td>';
