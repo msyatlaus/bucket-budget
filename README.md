@@ -19,9 +19,9 @@ Simply follow the link to our deployed app (kudos to Heroku) and experience the 
 ### :calendar: https://bucketbudgetplanner.herokuapp.com/ :airplane:
 
 ## Technology :computer:
-Preparation: Figma (wireframing),
-Frontend: HTML, CSS & bootstrap components; JavaScript & jQuery.
-Backend: Node.js, Express, mySQL, Sequelize, Heroku, & GitHub. 
+Preparation: Figma (wireframing). <br>
+Frontend: HTML, CSS & bootstrap components; JavaScript & jQuery. <br>
+Backend: Node.js, Express, mySQL, Sequelize, Heroku, & GitHub. <br>
 
 ## Contributors :milky_way:
 
