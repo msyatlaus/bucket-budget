@@ -241,13 +241,13 @@ function addQtySp(id, qty, price){
 function addCalBudget(price, qty){
     totalSpending = totalSpending + (price * qty); 
     initBudget = initBudget - (price * qty); 
-    $('.budgetCal').html('<h7>Total Cost: $' + totalSpending.toFixed() + '</h7><h7>Budget Remaining: $' + initBudget.toFixed()+ '</h7>');
+    $('.budgetCal').html('<h7>Total Cost: $' + totalSpending.toFixed() + '</h7><br><h7>Budget Remaining: $' + initBudget.toFixed()+ '</h7>');
 }
 
 function dedCalBudget(price, qty){
     totalSpending = totalSpending - (price * qty); 
     initBudget = initBudget + (price * qty); 
-    $('.budgetCal').html('<h7>Total Cost: $' + totalSpending.toFixed() + '</h7><h7>Budget Remaining: $' + initBudget.toFixed()+ '</h7>');
+    $('.budgetCal').html('<h7>Total Cost: $' + totalSpending.toFixed() + '</h7><br><h7>Budget Remaining: $' + initBudget.toFixed()+ '</h7>');
 }
 
 $('#confirm-trip').click(function () {
