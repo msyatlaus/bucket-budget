@@ -30,9 +30,9 @@ module.exports = function (app) {
         });
     });
 
-    app.delete('/api/budgetItems', (req, res) => {
-        controller.deleteBudgetItems(req.session.profileId, data => {
-            res.json(data[0].dataValues);
+    app.delete('/api/budgetItems/:id', (req, res) => {
+        controller.deleteBudgetItems(req.params.id, data => {
+            res.json(data.dataValues);
         });
     });
 
