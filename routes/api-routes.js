@@ -24,7 +24,6 @@ module.exports = function (app) {
 
     app.put('/api/budgetItems', (req, res) => {
         req.body.userProfileId = req.session.profileId;
-
         controller.updateBudgetItems(req.body, data => {
             res.json(data[0].dataValues);
         });

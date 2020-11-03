@@ -68,7 +68,7 @@ $('#confirm-trip').click(function () {
 
     $.each( resultObj, function( key, value ) {
         $.ajax({
-            method: "POST",
+            method: "PUT",
             url: "/api/budgetItems",
             data: {
                 name: value[1],
