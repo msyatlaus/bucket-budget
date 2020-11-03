@@ -1,127 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
-        <head>
-                <meta charset="UTF-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <meta http-equiv="X-UA-Compatible" content="ie=edge">
-                <title>Planning Trip</title>
-                <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-                <link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0/flatly/bootstrap.min.css" rel="stylesheet">
-                <script src="https://code.jquery.com/jquery.js"></script>
-                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-                <link rel="stylesheet" href="./css/planning.css">
-                <link href="https://fonts.googleapis.com/css?family=Lora:400,700|Montserrat:300" rel="stylesheet">
-            </head>
-<body>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Planning Trip</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+            integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0/flatly/bootstrap.min.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="./css/planning.css">
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,700|Montserrat:300" rel="stylesheet">
+    </head>
+
+    <body>
 
         <header>
-                <nav class="navbar navbar-expand-md bg-light navbar-light static-top">
-                  <a class="navbar-brand" href="welcome.html">
-                    <img class = "nav_logo" src="./assets/image/Screen_Shot_2020-10-26_at_5.19.28_PM-removebg-preview.png" alt="" >
-                  </a>
-                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <nav class="navbar navbar-expand-md bg-light navbar-light static-top">
+                <a class="navbar-brand" href="welcome.html">
+                    <img class="nav_logo" src="./assets/image/Screen_Shot_2020-10-26_at_5.19.28_PM-removebg-preview.png"
+                        alt="">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                    aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
-                  </button>
-                  <div class="collapse navbar-collapse" id="navbarResponsive">
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
-                      <li class="nav-item">
-                        <a class="nav-link" href="planned.html">Planned Trips</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="welcome.html">Sign Out</a>
-                      </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/planned">Planned Trips</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/logout">Sign Out</a>
+                        </li>
                     </ul>
-                  </div>
-                </nav>
+                </div>
+            </nav>
         </header>
-        <div class = "item1 parameters">
-            <input class = "intials col-12 col-md-12 col-lg-3" type="text" placeholder = "Place to Visit" id="placeVisit" style="margin-bottom: 20px;"/>
-            <input class = "intials col-12 col-md-12 col-lg-3" type="text" placeholder = "Budget - ($)" id="budget"/>
-            <button class = "sign-up" id="search" style = " margin : 0px;">Search</button>
+        <div class="item1 parameters">
+            <input class="intials col-12 col-md-12 col-lg-3" type="text" placeholder="Place to Visit" id="placeVisit"
+                style="margin-bottom: 20px;" />
+            <input class="intials col-12 col-md-12 col-lg-3" type="text" placeholder="Budget - ($)" id="budget" />
+            <button class="sign-up" id="search" style=" margin : 0px;">Search</button>
         </div>
 
-        <div id="main-page" style = "display: none;">
+        <div id="main-page" style="display: none;">
             <div class="grid-container">
                 <div class="item2">
 
 
-                <div id= "hotel-result" class="listhing col-12" >
-                    <h7>Hotels</h7>
-                    <table id=hotels>
-                        <tr>
-                            <th>Hotel Name</th>
-                            <th>Ratings</th>
-                            <th>Avg Price Per Night</th>
-                        </tr>
-                    </table>
+                    <div id="hotel-result" class="listhing col-12">
+                        <h7>Hotels</h7>
+                        <table id=hotels>
+                            <tr>
+                                <th>Hotel Name</th>
+                                <th>Ratings</th>
+                                <th>Avg Price Per Night</th>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div id="dining-result" class="listhing col-12">
+                        <h7>Dining</h7>
+                        <table id=dining>
+                            <tr>
+                                <th>Restaurants</th>
+                                <th>Ratings</th>
+                                <th>Avg Price</th>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div id="night-result" class="listhing col-12">
+                        <h7>Night Life</h7>
+                        <table id=night>
+                            <tr>
+                                <th>Night Life</th>
+                                <th>Ratings</th>
+                                <th>Avg Price</th>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div id="tours-result" class="listhing col-12">
+                        <h7>Things to Do</h7>
+                        <table id=tour>
+                            <tr>
+                                <th>SightSeeing</th>
+                                <th>Ratings</th>
+                                <th>Avg Price</th>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div id="shopping-result" class="listhing col-12">
+                        <h7>Things to Do</h7>
+                        <table id=Items to Buy For Traveling>
+                            <tr>
+                                <th>Item</th>
+                                <th>Category</th>
+                                <th>Price</th>
+                            </tr>
+                        </table>
+                    </div>
+
+
                 </div>
+                <div class="item3">
+                    <div id="total-result" class="listhing col-12" style=" margin: 0px;">
+                        <h7>Sub Totals</h7>
+                        <table name=subtotals id=subtotals>
+                            <tr>
+                                <th>Items</th>
+                                <th>Quantity</th>
+                                <th>Price</th>
+                            </tr>
+                        </table>
+                        <div class="budgetCal"></div>
+                        <button class="sign-up" id="confirm-trip" style=" margin : 0px;">Confirm</button>
+                    </div>
 
-                <div id= "dining-result" class="listhing col-12" >
-                    <h7>Dining</h7>
-                    <table id=dining>
-                        <tr>
-                            <th>Restaurants</th>
-                            <th>Ratings</th>
-                            <th>Avg Price</th>
-                        </tr>
-                    </table>
+
                 </div>
-
-                <div id= "night-result" class="listhing col-12" >
-                    <h7>Night Life</h7>
-                    <table id=night>
-                        <tr>
-                            <th>Night Life</th>
-                            <th>Ratings</th>
-                            <th>Avg Price</th>
-                        </tr>
-                    </table>
-                </div>
-
-                <div id= "tours-result" class="listhing col-12" >
-                    <h7>Things to Do</h7>
-                    <table id=tour>
-                        <tr>
-                            <th>SightSeeing</th>
-                            <th>Ratings</th>
-                            <th>Avg Price</th>
-                        </tr>
-                    </table>
-                </div>
-
-                <div id= "shopping-result" class="listhing col-12" >
-                    <h7>Things to Do</h7>
-                    <table id=Items to Buy For Traveling>
-                        <tr>
-                            <th>Item</th>
-                            <th>Category</th>
-                            <th>Price</th>
-                        </tr>
-                    </table>
-                </div>
-
-
-            </div>
-            <div class="item3">
-                <div id= "total-result" class="listhing col-12" style = " margin: 0px;">
-                <h7>Sub Totals</h7>
-                <table name=subtotals id=subtotals>
-                    <tr>
-                        <th>Items</th>
-                        <th>Quantity</th>
-                        <th>Price</th>
-                    </tr>
-                </table>
-                <div class = "budgetCal"></div>
-                <button class = "sign-up" id="confirm-trip" style = " margin : 0px;">Confirm</button>
-                </div>
-
-
-            </div>
             </div>
         </div>
-</body>
+    </body>
 
-<script src="./js/planning.js" type="text/javascript"></script>
+    <script src="./js/planning.js" type="text/javascript"></script>
 
 </html>
