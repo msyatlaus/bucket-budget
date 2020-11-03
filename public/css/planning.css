@@ -196,3 +196,10 @@ tr:hover{
     padding-top: 35px;
     padding-bottom: 35px;
  }
+
+ .delete{
+     background: white; 
+     border: solid;
+     border-color: #D4AF37;
+     border-width: 2px;
+ }
