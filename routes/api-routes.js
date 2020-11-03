@@ -115,36 +115,31 @@ module.exports = function (app) {
     });
 }
 // Trips
-app.get('/api/budgetItems', (req, res) => {
-    controller.getFromBudgetItems(data => {
+app.get('/api/trips', (req, res) => {
+    controller.getFromtrips(data => {
         res.json(data[0].dataValues);
     });
 });
 
-app.get('/api/budgetItemsOfUser', (req, res) => {
-    console.log(req.session.profileId);
-    controller.getBudgetItemsFromUser(req.session.profileId, data => {
-        res.json(data[0].dataValues)
-    });
-});
 
-app.post('/api/budgetItems', (req, res) => {
+
+app.post('/api/trips', (req, res) => {
     req.body.userProfileId = req.session.profileId;
-    controller.createBudgetItems(req.body, data => {
+    controller.createtrips(req.body, data => {
         res.json(data.dataValues);
     });
 });
 
-app.put('/api/budgetItems', (req, res) => {
+app.put('/api/trips', (req, res) => {
     req.body.userProfileId = req.session.profileId;
 
-    controller.updateBudgetItems(req.body, data => {
+    controller.updatetrips(req.body, data => {
         res.json(data.dataValues);
     });
 });
 
-app.delete('/api/budgetItems', (req, res) => {
-    controller.deleteBudgetItems(req.session.profileId, data => {
+app.delete('/api/trips', (req, res) => {
+    controller.deletetrips(req.session.profileId, data => {
         res.json(data[0].dataValues);
     });
 });
