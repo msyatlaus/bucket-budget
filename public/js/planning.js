@@ -253,7 +253,8 @@ $('#confirm-trip').click(function () {
             }
         });
     });
-
+    $( "#total-result" ).empty();
+    $('#total-result').html('<h7>Trip is confirmed, to edit click on the planned trip tab! </h7>');
 });
 
 

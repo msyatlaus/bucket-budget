@@ -25,6 +25,10 @@ function subQty(id, qty, price) {
     var qtyClick = qty - 1;
     if (qtyClick === 0) {
         $('table#subtotals tr#' + idClick + '').remove();
+        $.ajax({
+            method: "DELETE",
+            url: "/api/budgetItems/" + idClick
+        });
     } else {
         $('#subtotals #' + idClick + ' .qty').html('<button class="delete" onclick = subQty(' + idClick + ',' + qtyClick + ',' + price + ');>-</button> ' + qtyClick + ' <button class="delete" onclick = addQty(' + idClick + ',' + qtyClick + ',' + price + ');>+</button>');
     }
