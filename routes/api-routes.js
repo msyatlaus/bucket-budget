@@ -8,11 +8,11 @@ module.exports = function (app) {
         });
     });
 
-    app.get('/api/budgetItemsOfUser', (req, res) => {
-        controller.getBudgetItemsFromUser(req.session.profileId, data => {
-            res.json(data[0].dataValues)
-        });
-    });
+    // app.get('/api/budgetItemsOfUser', (req, res) => {
+    //     controller.getBudgetItemsFromUser(req.session.profileId, data => {
+    //         res.json(data[0].dataValues)
+    //     });
+    // });
 
     app.post('/api/budgetItems', (req, res) => {
         controller.createBudgetItems(req.body, data => {
@@ -41,27 +41,27 @@ module.exports = function (app) {
         });
     });
 
-    app.get('/api/eventsOfUser', (req, res) => {
-        controller.getEventsFromUser(req.session.profileId, data => {
-            res.json(data[0].dataValues)
-        });
-    });
+    // app.get('/api/eventsOfUser', (req, res) => {
+    //     controller.getEventsFromUser(req.session.profileId, data => {
+    //         res.json(data[0].dataValues)
+    //     });
+    // });
 
     app.post('/api/events', (req, res) => {
         controller.createEvents(req.body, data => {
-            res.json(data[0].dataValues);
+            res.json(data.dataValues);
         });
     });
 
     app.put('/api/events', (req, res) => {
         controller.updateEvents(req.body, data => {
-            res.json(data[0].dataValues);
+            res.json(data.dataValues);
         });
     });
 
     app.delete('/api/events', (req, res) => {
         controller.deleteEvents(req.session.profileId, data => {
-            res.json(data[0].dataValues);
+            res.json(data.dataValues);
         });
     });
 
