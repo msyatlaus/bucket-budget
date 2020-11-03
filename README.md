@@ -1,12 +1,11 @@
 
-# Budget Bucket
+# Budget Bucket :page_with_curl:
 
 ![Brand Image](./public/assets/welcome/Screen_Shot_2020-10-26_at_5.19.28_PM-removebg-preview.png)
 
 ## Table of Contents :file_folder:
 - [Description](#description)
 - [Tests](#tests)
-- [License](#license)
 - [Technology](#technology)
 - [Contributors](#contributors)
 - [Contact](#contact)
@@ -14,18 +13,15 @@
 ## Description :book:
   You've wanted to travel since the dawn of COVID, and in the uncertain times comes uncertain budgets. We're here to help. Simply give us an idea of what your goals are for your travel arrangements and we'll help you plan the dream trip with your specific budget in mind! Come journey with us to the pristine shores of Destin, FL. Come frolic with us in the gorgeous plains of south Arkansas.
 
-
 ## Tests :bar_chart:
-Simply follow the link to our deployed app (kudos to Heroku) and experience the magic! Before you know it you'll have an incredibly organized & concise list of all your traveling necessities.
+Simply follow the link to our deployed app (kudos to Heroku) and experience the magic!
 
-
-## License :page_with_curl:
-Pending
-
+### :calendar: https://bucketbudgetplanner.herokuapp.com/ :airplane:
 
 ## Technology :computer:
-Pending
-
+Preparation: Figma (wireframing),
+Frontend: HTML, CSS & bootstrap components; JavaScript & jQuery.
+Backend: Node.js, Express, mySQL, Sequelize, Heroku, & GitHub. 
 
 ## Contributors :milky_way:
 
