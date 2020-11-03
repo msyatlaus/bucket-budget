@@ -13,13 +13,15 @@
 ## Description :book:
   You've wanted to travel since the dawn of COVID, and in the uncertain times comes uncertain budgets. We're here to help. Simply give us an idea of what your goals are for your travel arrangements and we'll help you plan the dream trip with your specific budget in mind! Come journey with us to the pristine shores of Destin, FL. Come frolic with us in the gorgeous plains of south Arkansas.
 
+![Example](./public/assets/image/budget_list.PNG)
+
 ## Tests :bar_chart:
 Simply follow the link to our deployed app (kudos to Heroku) and experience the magic!
 
 ### :calendar: https://bucketbudgetplanner.herokuapp.com/ :airplane:
 
 ## Technology :computer:
-Preparation: Figma (wireframing). <br>
+Preparation & Execution: Figma (wireframing), Discord, Slack & Zoom (coordination). <br>
 Frontend: HTML, CSS & bootstrap components; JavaScript & jQuery. <br>
 Backend: Node.js, Express, mySQL, Sequelize, Heroku, & GitHub. <br>
 
