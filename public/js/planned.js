@@ -5,14 +5,15 @@ $(document).ready(function () {
     }).then(function (data) {
         console.log(data);
 
-        // $.each(data, function(i, item) {  
-        //     $('#hotels').append($('<tr>').attr('id',$.trim(decodeURIComponent(item.id))).append(
-        //                  $('<td>').text($.trim(decodeURIComponent(item.name))),
-        //                  $('<td>').text($.trim(decodeURIComponent(item.hotels_score.toFixed()))),
-        //                  $('<td>').text($.trim(decodeURIComponent("$" + (((item.hotels_score)/2)*100).toFixed())))                    
-        //                )
-        //     )
-        // });
+        $.each(data.budget_items, function(i, item) {  
+
+            var tr = '<tr id = ' + item.id + '>';
+            tr += '<td>' + item.name + '</td>';
+            tr += '<td class=qty><button class="delete">-</button> '+ item.quantity +'<button class="delete">+</button></td>';
+            tr += '<td>$' + item.price + '</td>';
+            tr += '</tr>';        
+            $('#subtotals').append(tr);
+        });
     });
 
 });
