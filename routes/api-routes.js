@@ -9,22 +9,18 @@ module.exports = function (app) {
     });
 
     app.get('/api/budgetItemsOfUser', (req, res) => {
-        console.log(req.session.profileId);
         controller.getBudgetItemsFromUser(req.session.profileId, data => {
             res.json(data[0].dataValues)
         });
     });
 
     app.post('/api/budgetItems', (req, res) => {
-        req.body.userProfileId = req.session.profileId;
         controller.createBudgetItems(req.body, data => {
             res.json(data.dataValues);
         });
     });
 
     app.put('/api/budgetItems', (req, res) => {
-        req.body.userProfileId = req.session.profileId;
-
         controller.updateBudgetItems(req.body, data => {
             res.json(data.dataValues);
         });
@@ -107,6 +103,33 @@ module.exports = function (app) {
         });
     });
 
+    // Trips
+    app.get('/api/trips', (req, res) => {
+        controller.getFromTrips(data => {
+            res.json(data[0].dataValues);
+        });
+    });
+
+    app.post('/api/trips', (req, res) => {
+        req.body.userProfileId = req.session.profileId;
+        controller.createTrips(req.body, data => {
+            res.json(data.dataValues);
+        });
+    });
+
+    app.put('/api/trips', (req, res) => {
+        req.body.userProfileId = req.session.profileId;
+        controller.updateTrips(req.body, data => {
+            res.json(data.dataValues);
+        });
+    });
+
+    app.delete('/api/trips/:id', (req, res) => {
+        controller.deleteTrips(req.params.id, data => {
+            res.json(data.dataValues);
+        });
+    });
+
     // Shopping Items
     app.get('/api/shoppingItems', (req, res) => {
         controller.getFromShoppingItems(data => {
@@ -114,32 +137,3 @@ module.exports = function (app) {
         });
     });
 }
-// Trips
-app.get('/api/trips', (req, res) => {
-    controller.getFromtrips(data => {
-        res.json(data[0].dataValues);
-    });
-});
-
-
-
-app.post('/api/trips', (req, res) => {
-    req.body.userProfileId = req.session.profileId;
-    controller.createtrips(req.body, data => {
-        res.json(data.dataValues);
-    });
-});
-
-app.put('/api/trips', (req, res) => {
-    req.body.userProfileId = req.session.profileId;
-
-    controller.updatetrips(req.body, data => {
-        res.json(data.dataValues);
-    });
-});
-
-app.delete('/api/trips', (req, res) => {
-    controller.deletetrips(req.session.profileId, data => {
-        res.json(data[0].dataValues);
-    });
-});
