@@ -402,3 +402,203 @@ tr:hover{
          border-width: 2px;
      }
  }
+
+ @media only screen and (min-width: 415px) and (max-width: 768px) {
+    .grid-container {
+        display: grid;
+        grid-template-areas:
+            'header header  '
+            'menu menu'
+            'main main';
+        grid-gap: 10px;
+        padding: 10px;
+        }
+        
+        .grid-container > div {
+        background-color: rgba(255, 255, 255, 0.8);
+        text-align: center;
+        padding: 20px;
+        font-size: 30px;
+        }
+        .item1 { grid-area: header; padding-left: 30px;}
+        .item2 { grid-area: menu; }
+        .item3 { grid-area: main; }
+        .navbar-brand {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            text-transform: uppercase;
+            color: black;
+            padding-bottom: 5px;
+            border-bottom: solid;
+            border-bottom-width: 2px;
+            border-bottom-color: #D4AF37;
+         }
+        
+        .header{
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .navbar{
+            border-bottom-style: solid;
+            border-bottom-width: 2px;
+            border-bottom-color: #D4AF37;
+            width: 100%;
+        }
+        
+        .nav-link{
+            font-size: 20px;
+            font-family: 'Cormorant Garamond', serif;
+            color: black;
+            font-style: italic;
+        }
+        
+        .navbar-light .navbar-nav .nav-link:hover{
+            color: #D4AF37;
+        }
+        
+        .nav_logo{
+            width : 160px;
+            height: 90px;
+        }
+        .parameters{
+            padding-top: 40px; 
+        }
+        
+        .intials{
+            border: 2px solid #D4AF37;
+            border-radius: 2px;
+            padding: 18px;
+            margin-right: 20px;
+        }
+        
+        .sign-up{
+            background: none;
+            border: 2px solid;
+            font-size: 20px;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            line-height: 1;
+            padding: .9em 2em;
+            border-color: #D4AF37;
+        }
+        
+        .sign-up:hover{
+            background: #D4AF37;
+            background-color: #D4AF37;
+            border-color: black;
+        }
+        
+        h7 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+            text-transform: uppercase;
+            color: black;
+            margin:auto;
+            vertical-align:middle;
+            font-weight: 100;
+            padding: 15px;
+            margin-top: 15px;
+        }
+        
+        h10 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 40px;
+            text-transform: uppercase;
+            color: black;
+            margin:auto;
+            vertical-align:middle;
+            font-weight: 100;
+            padding-bottom: 15px;
+            border-bottom: solid;
+            border-bottom-color: #D4AF37;
+         }
+        
+         table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            margin: 0px;
+            border: solid;
+            border-color: #D4AF37;
+            border-width: 2px;
+          }
+          
+        th {
+            
+            text-align: center;
+            padding: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+            text-transform: uppercase;
+            color: black;
+            background-color: rgba(233, 221, 184, 0.366);
+            border: solid;
+            border-color: #D4AF37;
+            border-width: 2px;
+        
+          }
+        td {
+            text-align: center;
+            padding: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+            text-transform: uppercase;
+            color: black;
+            border: solid;
+            border-color: #D4AF37;
+            border-width: 1.8px;
+          }
+        
+        tr:hover{
+            cursor:pointer; 
+            font-family: 'Montserrat', sans-serif;
+            padding: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+            color: black;
+            border: solid;
+            border-color: #D4AF37;
+            background-color: rgb(214, 210, 197, 0.066);
+        }
+        
+          
+        .listhing{
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            margin : 0px;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding : 20px;
+            margin-bottom : 20px;
+        }
+        
+        .budgetCal{
+            border: solid;
+            border-color: #D4AF37;
+            border-width: 2px;
+            padding: 10px;
+            margin: 20px; 
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        
+         .game-rules{
+            font-size: 20px;
+            font-family: 'Lora', serif;
+            color: black;
+            margin:auto;
+            vertical-align:middle;
+            font-weight: 100;
+            padding-top: 35px;
+            padding-bottom: 35px;
+         }
+        
+         .delete{
+             background: white; 
+             border: solid;
+             border-color: #D4AF37;
+             border-width: 2px;
+         }
+     }
