@@ -114,3 +114,37 @@ module.exports = function (app) {
         });
     });
 }
+// Trips
+app.get('/api/budgetItems', (req, res) => {
+    controller.getFromBudgetItems(data => {
+        res.json(data[0].dataValues);
+    });
+});
+
+app.get('/api/budgetItemsOfUser', (req, res) => {
+    console.log(req.session.profileId);
+    controller.getBudgetItemsFromUser(req.session.profileId, data => {
+        res.json(data[0].dataValues)
+    });
+});
+
+app.post('/api/budgetItems', (req, res) => {
+    req.body.userProfileId = req.session.profileId;
+    controller.createBudgetItems(req.body, data => {
+        res.json(data.dataValues);
+    });
+});
+
+app.put('/api/budgetItems', (req, res) => {
+    req.body.userProfileId = req.session.profileId;
+
+    controller.updateBudgetItems(req.body, data => {
+        res.json(data.dataValues);
+    });
+});
+
+app.delete('/api/budgetItems', (req, res) => {
+    controller.deleteBudgetItems(req.session.profileId, data => {
+        res.json(data[0].dataValues);
+    });
+});
