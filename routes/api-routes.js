@@ -17,7 +17,6 @@ module.exports = function (app) {
 
     app.post('/api/budgetItems', (req, res) => {
         req.body.userProfileId = req.session.profileId;
-
         controller.createBudgetItems(req.body, data => {
             res.json(data.dataValues);
         });

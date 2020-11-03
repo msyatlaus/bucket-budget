@@ -1,25 +1,27 @@
+var totalSpending = 0;
 $(document).ready(function () {
     $.ajax({
         method: "GET",
         url: "/api/budgetItemsOfUser"
     }).then(function (data) {
         console.log(data);
-        idsend = 
         $.each(data.budget_items, function(i, item) {  
-
+            totalSpending = totalSpending + item.price;
             var tr = '<tr id = ' + item.id + '>';
             tr += '<td>' + item.name + '</td>';
-            tr += '<td class=qty><button class="delete" onclick = subQty('+idSend+','+qtySend+','+item.price+');>-</button> ' + item.quantity + ' <button class="delete" onclick = addQty('+idSend+','+qtySend+','+nightPrice.replace('$', '')+');>+</button></td>';
+            tr += '<td class=qty><button class="delete" onclick = subQty('+item.id+','+item.quantity+','+item.price+');>-</button> ' + item.quantity + ' <button class="delete" onclick = addQty('+item.id+','+item.quantity+','+item.price+');>+</button></td>';
             tr += '<td>$' + item.price + '</td>';
             tr += '</tr>';        
             $('#subtotals').append(tr);
         });
+
+        $('.budgetCal').html('<h7>Total Cost: $' + totalSpending + '</h7>');
     });
 
 });
 
 function subQty(id, qty, price){
-    var idClick = id[0].id; 
+    var idClick = id; 
     var qtyClick = qty - 1; 
     if (qtyClick === 0){
         $('table#subtotals tr#'+idClick+'').remove();
@@ -30,7 +32,7 @@ function subQty(id, qty, price){
 }
 
 function addQty(id, qty, price){
-    var idClick = id[0].id; 
+    var idClick = id; 
     var qtyClick = qty + 1; 
     if (qtyClick === 0){
         $('table#subtotals tr#'+idClick+'').remove();
@@ -42,12 +44,38 @@ function addQty(id, qty, price){
 
 function addCalBudget(price, qty){
     totalSpending = totalSpending + (price * qty); 
-    initBudget = initBudget - (price * qty); 
-    $('.budgetCal').html('<h7>Total Cost: $' + totalSpending.toFixed() + '</h7><h7>Budget Remaining: $' + initBudget.toFixed()+ '</h7>');
+    $('.budgetCal').html('<h7>Total Cost: $' + totalSpending.toFixed() + '</h7>');
 }
 
 function dedCalBudget(price, qty){
     totalSpending = totalSpending - (price * qty); 
-    initBudget = initBudget + (price * qty); 
-    $('.budgetCal').html('<h7>Total Cost: $' + totalSpending.toFixed() + '</h7><h7>Budget Remaining: $' + initBudget.toFixed()+ '</h7>');
+    $('.budgetCal').html('<h7>Total Cost: $' + totalSpending.toFixed() + '</h7>');
 }
+
+$('#confirm-trip').click(function () {
+    var resultObj = []
+
+    for ( let [i,row] of [...subtotals.rows].entries() ){ 
+        var testArray = [];
+        testArray.push(row.id);
+        for( let [j,cell] of [...row.cells].entries() ){
+             testArray.push(cell.innerText.replace(/[^a-z0-9\s]/gi, ''))
+        }
+        resultObj.push(testArray);
+    }
+    resultObj.shift();
+    console.log(resultObj);
+
+    $.each( resultObj, function( key, value ) {
+        $.ajax({
+            method: "POST",
+            url: "/api/budgetItems",
+            data: {
+                name: value[1],
+                quantity: parseInt(value[2]),
+                price: parseInt(value[3])
+            }
+        });
+    });
+
+});
