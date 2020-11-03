@@ -215,7 +215,7 @@ h7 {
 @media only screen and (min-width: 415px) and (max-width: 768px) {
     h7 {
         font-family: 'Montserrat', sans-serif;
-        font-size: 20px;
+        font-size: 14px;
         font-style: italic;
         color: black;
         margin:auto;
@@ -251,7 +251,7 @@ h7 {
     
     .header-shadow{
         width: 100%;
-        height: 900px;    
+        height: 600px;    
         background-size:cover;
         display: flex;
         align-items: center;
@@ -314,3 +314,4 @@ h7 {
     
 
 }
+
