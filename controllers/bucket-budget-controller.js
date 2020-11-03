@@ -3,12 +3,16 @@ const db = {
   users: require('../models/users'),
   events: require('../models/events'),
   shoppingItems: require('../models/shoppingItems'),
+  trips: require('../models/trips'),
   setAssociations: function () {
-    db.users.hasMany(db.budgetItems);
-    db.users.hasMany(db.events);
-    db.budgetItems.belongsTo(db.users);
-    db.events.belongsTo(db.users);
+    this.users.hasMany(db.trips);
 
+    this.trips.belongsTo(db.users);
+    this.trips.hasMany(db.budgetItems);
+    this.trips.hasMany(db.events);
+
+    this.budgetItems.belongsTo(db.trips);
+    this.events.belongsTo(db.trips);
   },
   synchronize: function () {
     this.budgetItems.sequelize.sync();
@@ -19,10 +23,7 @@ const db = {
 }
 
 // db.setAssociations();
-db.users.hasMany(db.budgetItems);
-db.users.hasMany(db.events);
-db.budgetItems.belongsTo(db.users);
-db.events.belongsTo(db.users);
+db.setAssociations();
 db.synchronize();
 
 const Controller = function () { }
