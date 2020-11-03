@@ -42,12 +42,13 @@ Controller.prototype.createBudgetItems = function (listItem, cb) {
 
 Controller.prototype.updateBudgetItems = function (listItem, cb) {
   db.budgetItems.update(
-    listItem.body,
+    listItem,
     {
       where: {
-        id: listItem.id
+        id: parseInt(listItem.id)
       }
     }).then(data => {
+      console.log(data);
       cb(data);
     });
 }
